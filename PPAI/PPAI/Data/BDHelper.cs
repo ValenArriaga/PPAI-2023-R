@@ -21,20 +21,20 @@ namespace TPPav1.Datos
         {
             conexion = new SqlConnection();
             comando = new SqlCommand();
-            //Martin
+            //Exe
             //cadenaConexion = @"Data Source=LAPTOP-6VBJVRSO\SQLEXPRESS;Initial Catalog=BDPavTP;Integrated Security=True";
 
-            //Clases
+            //Trini
             //cadenaConexion = @"Data Source=maquis;Initial Catalog=BDPav1TP5;User ID=avisuales1;Password=Pav1#2020Maquis";
 
-            //Ronald
+            //Mile
             //cadenaConexion = @"Data Source=DESKTOP-1G6OTJV\SQLEXPRESS;Initial Catalog=BDPav1TP;Integrated Security=True";
 
-            //Santiago
+            //Pedro
             //cadenaConexion = @"Data Source=DESKTOP-2GI3TRM\SQLEXPRESS;Initial Catalog=BDPav1TP;Integrated Security=True";
 
             //Valentin
-            cadenaConexion = @"Data Source=DESKTOP-84H3S6N\SQLEXPRESS;Initial Catalog=BDPav1TP;Integrated Security=True";        
+            cadenaConexion = @"cadena";        
         }
 
         enum ResultadoTransaccion
