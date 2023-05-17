@@ -34,31 +34,32 @@ namespace PPAI.UI
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblOpcion = new System.Windows.Forms.Label();
             this.lblSubopcion = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.validaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.respuestas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvValidaciones = new System.Windows.Forms.DataGridView();
+            this.Validaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Respuestas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtRespuestaOperador = new System.Windows.Forms.TextBox();
             this.lblDescripcionOperador = new System.Windows.Forms.Label();
             this.lblAccion = new System.Windows.Forms.Label();
             this.cboAcciones = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.txtOpcion = new System.Windows.Forms.TextBox();
+            this.txtSubOpcion = new System.Windows.Forms.TextBox();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvValidaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(12, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(205, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(212, 25);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Llamada En Curso";
+            this.lblTitulo.Text = "Llamada En Curso:";
             // 
             // lblCliente
             // 
@@ -96,35 +97,36 @@ namespace PPAI.UI
             this.lblSubopcion.TabIndex = 4;
             this.lblSubopcion.Text = "SubOpcion";
             // 
-            // dataGridView1
+            // dgvValidaciones
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.validaciones,
-            this.respuestas});
-            this.dataGridView1.Location = new System.Drawing.Point(17, 148);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(645, 105);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvValidaciones.AllowUserToAddRows = false;
+            this.dgvValidaciones.AllowUserToDeleteRows = false;
+            this.dgvValidaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvValidaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Validaciones,
+            this.Respuestas});
+            this.dgvValidaciones.Location = new System.Drawing.Point(17, 148);
+            this.dgvValidaciones.Name = "dgvValidaciones";
+            this.dgvValidaciones.Size = new System.Drawing.Size(645, 169);
+            this.dgvValidaciones.TabIndex = 5;
             // 
-            // validaciones
+            // Validaciones
             // 
-            this.validaciones.HeaderText = "Validaciones";
-            this.validaciones.Name = "validaciones";
-            this.validaciones.ReadOnly = true;
-            this.validaciones.Width = 300;
+            this.Validaciones.HeaderText = "Validaciones";
+            this.Validaciones.Name = "Validaciones";
+            this.Validaciones.ReadOnly = true;
+            this.Validaciones.Width = 200;
             // 
-            // respuestas
+            // Respuestas
             // 
-            this.respuestas.HeaderText = "Respuestas";
-            this.respuestas.Name = "respuestas";
-            this.respuestas.Width = 300;
+            this.Respuestas.HeaderText = "Respuestas";
+            this.Respuestas.Name = "Respuestas";
+            this.Respuestas.Width = 399;
             // 
             // txtRespuestaOperador
             // 
-            this.txtRespuestaOperador.Location = new System.Drawing.Point(17, 295);
+            this.txtRespuestaOperador.Enabled = false;
+            this.txtRespuestaOperador.Location = new System.Drawing.Point(17, 374);
             this.txtRespuestaOperador.Multiline = true;
             this.txtRespuestaOperador.Name = "txtRespuestaOperador";
             this.txtRespuestaOperador.Size = new System.Drawing.Size(645, 83);
@@ -133,7 +135,7 @@ namespace PPAI.UI
             // lblDescripcionOperador
             // 
             this.lblDescripcionOperador.AutoSize = true;
-            this.lblDescripcionOperador.Location = new System.Drawing.Point(14, 279);
+            this.lblDescripcionOperador.Location = new System.Drawing.Point(14, 358);
             this.lblDescripcionOperador.Name = "lblDescripcionOperador";
             this.lblDescripcionOperador.Size = new System.Drawing.Size(122, 13);
             this.lblDescripcionOperador.TabIndex = 8;
@@ -142,7 +144,7 @@ namespace PPAI.UI
             // lblAccion
             // 
             this.lblAccion.AutoSize = true;
-            this.lblAccion.Location = new System.Drawing.Point(15, 407);
+            this.lblAccion.Location = new System.Drawing.Point(15, 486);
             this.lblAccion.Name = "lblAccion";
             this.lblAccion.Size = new System.Drawing.Size(40, 13);
             this.lblAccion.TabIndex = 9;
@@ -151,14 +153,14 @@ namespace PPAI.UI
             // cboAcciones
             // 
             this.cboAcciones.FormattingEnabled = true;
-            this.cboAcciones.Location = new System.Drawing.Point(69, 404);
+            this.cboAcciones.Location = new System.Drawing.Point(69, 483);
             this.cboAcciones.Name = "cboAcciones";
             this.cboAcciones.Size = new System.Drawing.Size(178, 21);
             this.cboAcciones.TabIndex = 10;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(553, 456);
+            this.btnCancelar.Location = new System.Drawing.Point(553, 512);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 23);
             this.btnCancelar.TabIndex = 11;
@@ -167,57 +169,73 @@ namespace PPAI.UI
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(395, 456);
+            this.btnOk.Location = new System.Drawing.Point(396, 512);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(109, 23);
             this.btnOk.TabIndex = 12;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // textBox2
+            // txtCliente
             // 
-            this.textBox2.Location = new System.Drawing.Point(58, 62);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Location = new System.Drawing.Point(58, 62);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(192, 20);
+            this.txtCliente.TabIndex = 13;
             // 
-            // textBox3
+            // txtCategoria
             // 
-            this.textBox3.Location = new System.Drawing.Point(337, 62);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 20);
-            this.textBox3.TabIndex = 14;
+            this.txtCategoria.Enabled = false;
+            this.txtCategoria.Location = new System.Drawing.Point(337, 62);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(192, 20);
+            this.txtCategoria.TabIndex = 14;
             // 
-            // textBox4
+            // txtOpcion
             // 
-            this.textBox4.Location = new System.Drawing.Point(58, 105);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(192, 20);
-            this.textBox4.TabIndex = 15;
+            this.txtOpcion.Enabled = false;
+            this.txtOpcion.Location = new System.Drawing.Point(58, 105);
+            this.txtOpcion.Name = "txtOpcion";
+            this.txtOpcion.Size = new System.Drawing.Size(192, 20);
+            this.txtOpcion.TabIndex = 15;
             // 
-            // textBox5
+            // txtSubOpcion
             // 
-            this.textBox5.Location = new System.Drawing.Point(337, 105);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(192, 20);
-            this.textBox5.TabIndex = 16;
+            this.txtSubOpcion.Enabled = false;
+            this.txtSubOpcion.Location = new System.Drawing.Point(337, 105);
+            this.txtSubOpcion.Name = "txtSubOpcion";
+            this.txtSubOpcion.Size = new System.Drawing.Size(192, 20);
+            this.txtSubOpcion.TabIndex = 16;
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(396, 323);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(266, 23);
+            this.btnConfirmar.TabIndex = 17;
+            this.btnConfirmar.Text = "Confirmar Respuestas";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // PantallaRegistrarRespuesta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 512);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(690, 547);
+            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.txtSubOpcion);
+            this.Controls.Add(this.txtOpcion);
+            this.Controls.Add(this.txtCategoria);
+            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.cboAcciones);
             this.Controls.Add(this.lblAccion);
             this.Controls.Add(this.lblDescripcionOperador);
             this.Controls.Add(this.txtRespuestaOperador);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvValidaciones);
             this.Controls.Add(this.lblSubopcion);
             this.Controls.Add(this.lblOpcion);
             this.Controls.Add(this.lblCategoria);
@@ -225,7 +243,8 @@ namespace PPAI.UI
             this.Controls.Add(this.lblTitulo);
             this.Name = "PantallaRegistrarRespuesta";
             this.Text = "PantallaRegistrarRespuesta";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.PantallaRegistrarRespuesta_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvValidaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,18 +257,19 @@ namespace PPAI.UI
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblOpcion;
         private System.Windows.Forms.Label lblSubopcion;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn validaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn respuestas;
+        private System.Windows.Forms.DataGridView dgvValidaciones;
         private System.Windows.Forms.TextBox txtRespuestaOperador;
         private System.Windows.Forms.Label lblDescripcionOperador;
         private System.Windows.Forms.Label lblAccion;
         private System.Windows.Forms.ComboBox cboAcciones;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtOpcion;
+        private System.Windows.Forms.TextBox txtSubOpcion;
+        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Validaciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Respuestas;
     }
 }

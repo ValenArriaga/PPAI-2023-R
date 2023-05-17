@@ -8,10 +8,10 @@ namespace PPAI.Entities
 {
     public class OpcionValidacionEntity
     {
-        private bool correcta;
+        private string correcta;
         private string descripcion;
 
-        public bool Correcta { get => correcta; set => correcta = value; }
+        public string Correcta { get => correcta; set => correcta = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
 
         public override string ToString()

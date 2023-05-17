@@ -22,16 +22,16 @@ namespace TPPav1.Datos
             conexion = new SqlConnection();
             comando = new SqlCommand();
             //Exe
-            //cadenaConexion = @"Data Source=LAPTOP-6VBJVRSO\SQLEXPRESS;Initial Catalog=BDPavTP;Integrated Security=True";
+            //cadenaConexion = @"";
 
             //Trini
-            //cadenaConexion = @"Data Source=maquis;Initial Catalog=BDPav1TP5;User ID=avisuales1;Password=Pav1#2020Maquis";
+            //cadenaConexion = @"";
 
             //Mile
-            //cadenaConexion = @"Data Source=DESKTOP-1G6OTJV\SQLEXPRESS;Initial Catalog=BDPav1TP;Integrated Security=True";
+            //cadenaConexion = @"";
 
             //Pedro
-            //cadenaConexion = @"Data Source=DESKTOP-2GI3TRM\SQLEXPRESS;Initial Catalog=BDPav1TP;Integrated Security=True";
+            //cadenaConexion = @"";
 
             //Valentin
             cadenaConexion = @"cadena";        

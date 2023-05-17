@@ -16,5 +16,21 @@ namespace PPAI.Entities
         {
             return "Estado: " + Nombre;
         }
+
+        public bool EsEnCurso()
+        {
+            if (Nombre == "EnCurso")
+                return true;
+            else
+                return false;
+        }
+
+        public bool EsFinalizada()
+        {
+            if (Nombre == "Finalizada")
+                return true;
+            else
+                return false;
+        }
     }
 }

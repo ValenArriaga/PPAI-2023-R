@@ -10,7 +10,7 @@ namespace PPAI.Entities
     {
         private string descripcionOperador;
         private string detalleAccionRequerida;
-        private double duracion;
+        private TimeSpan duracion;
         private bool encuestaEnviada;
         private string observacionAuditor;
         private OpcionLlamadaEntity opcionSeleccionada = new OpcionLlamadaEntity();
@@ -19,11 +19,11 @@ namespace PPAI.Entities
         private string operador;
         private ClienteEntity cliente = new ClienteEntity();
         private string accion;
-        private List<CambioEstadoEntity> cambioEstado = new List<CambioEstadoEntity>();
+        private List<CambioEstadoEntity> cambiosEstado = new List<CambioEstadoEntity>();
 
         public string DescripcionOperador { get => descripcionOperador; set => descripcionOperador = value; }
         public string DetalleAccionRequerida { get => detalleAccionRequerida; set => detalleAccionRequerida = value; }
-        public double Duracion { get => duracion; set => duracion = value; }
+        public TimeSpan Duracion { get => duracion; set => duracion = value; }
         public bool EncuestaEnviada { get => encuestaEnviada; set => encuestaEnviada = value; }
         public string ObservacionAuditor { get => observacionAuditor; set => observacionAuditor = value; }
         public OpcionLlamadaEntity OpcionSeleccionada { get => opcionSeleccionada; set => opcionSeleccionada = value; }
@@ -32,11 +32,38 @@ namespace PPAI.Entities
         public string Operador { get => operador; set => operador = value; }
         public ClienteEntity Cliente { get => cliente; set => cliente = value; }
         public string Accion { get => accion; set => accion = value; }
-        public List<CambioEstadoEntity> CambioEstado { get => cambioEstado; set => cambioEstado = value; }
+        public List<CambioEstadoEntity> CambiosEstado { get => cambiosEstado; set => cambiosEstado = value; }
 
         public override string ToString()
         {
             return base.ToString();
+        }
+
+        public void SetEstadoActual(EstadoEntity e, DateTime fecha)
+        {
+            CambioEstadoEntity nuevoCambioEstado = new CambioEstadoEntity();
+            nuevoCambioEstado.Estado = e;
+            nuevoCambioEstado.FechaHoraInicio = fecha;
+            CambiosEstado.Add(nuevoCambioEstado);
+        }
+
+        public bool ValidarInfoCliente(string respuesta, ValidacionEntity validacion)
+        {
+            return Cliente.EsInfoCorrecta(respuesta, validacion);
+        }
+
+        public void CalcularDuracion(DateTime horaFin)
+        {
+            DateTime horaInicio = DateTime.Now;
+            foreach (CambioEstadoEntity cambioEstado in CambiosEstado)
+            {
+                if (cambioEstado.Estado.EsEnCurso())
+                    horaInicio = cambioEstado.FechaHoraInicio;
+            }
+            if (horaInicio != null)
+            {
+                Duracion = horaInicio - horaFin;
+            }
         }
     }
 }

@@ -22,5 +22,15 @@ namespace PPAI.Entities
         {
             return "Nombre: " + NombreCompleto + "\t - \t DNI: " + Dni;
         }
+
+        public bool EsInfoCorrecta(string respuesta, ValidacionEntity validacion)
+        {
+            foreach (InformacionClienteEntity info in Info)
+            {
+                if (info.EsValidacion(validacion))
+                    return info.EsInfoCorrecta(respuesta);
+            }
+            return false;
+        }
     }
 }

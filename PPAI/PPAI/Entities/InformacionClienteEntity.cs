@@ -22,5 +22,15 @@ namespace PPAI.Entities
         {
             return "Dato a Validar: " + DatoAValidar + "\t - \t Tipo: " + Tipo + "\t - \t Validacion: " + Validacion;
         }
+
+        public bool EsValidacion(ValidacionEntity validacion)
+        {
+            return DatoAValidar == validacion.Nombre;
+        }
+
+        public bool EsInfoCorrecta(string respuesta)
+        {
+            return OpcionCorrecta.Correcta == respuesta;
+        }
     }
 }

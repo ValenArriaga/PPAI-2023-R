@@ -60,6 +60,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ControladorRegistrarRespuesta.cs" />
+    <Compile Include="Services\Implementaciones\EstadoService.cs" />
+    <Compile Include="Services\Interfaces\ICambioEstadoService.cs" />
+    <Compile Include="Services\Interfaces\ICategoriaLlamadaService.cs" />
+    <Compile Include="Services\Interfaces\IClienteService.cs" />
+    <Compile Include="Services\Interfaces\IEstadoService.cs" />
+    <Compile Include="Services\Interfaces\IInformacionClienteService.cs" />
+    <Compile Include="Services\Interfaces\ILlamadaService.cs" />
+    <Compile Include="Services\Interfaces\IOpcionLlamadaService.cs" />
+    <Compile Include="Services\Interfaces\IOpcionValidacionService.cs" />
+    <Compile Include="Services\Interfaces\ISubOpcionLlamadaService.cs" />
+    <Compile Include="Services\Interfaces\IValidacionService.cs" />
     <Compile Include="UI\PantallaRegistrarRespuesta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,9 +102,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\Implementaciones\" />
-    <Folder Include="Services\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
