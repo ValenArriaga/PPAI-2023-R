@@ -10,13 +10,16 @@ using TPPav1.Datos;
 
 namespace PPAI.Data.Daos
 {
-    class LlamadaDao : ILlamadaDao
+    public class LlamadaDao : ILlamadaDao
     {
-        public LlamadaEntity getLlamadaById(int id)
+        public LlamadaEntity getById(int id)
         {
             LlamadaEntity oLlamada = new LlamadaEntity();
-            string consulta = "";
+            string consulta = "select * from llamada where idLlamada = " + id;
             DataTable tabla = BDHelper.ObtenerInstancia().Consultar(consulta);
+            ClienteDao cdao = new ClienteDao();
+            OpcionLlamadaDao oldao = new OpcionLlamadaDao();
+            SubOpcionLlamadaDao soldao = new SubOpcionLlamadaDao();
             if (tabla.Rows.Count > 0)
             {
                 oLlamada.DescripcionOperador = tabla.Rows[0]["descripcionOperador"].ToString();
@@ -24,9 +27,10 @@ namespace PPAI.Data.Daos
                 oLlamada.Duracion = (TimeSpan)tabla.Rows[0]["duracion"];
                 oLlamada.EncuestaEnviada = (bool)tabla.Rows[0]["encuestaEnviada"];
                 oLlamada.ObservacionAuditor = tabla.Rows[0]["observacionAuditor"].ToString();
-                oLlamada.Cliente.NombreCompleto = tabla.Rows[0]["nombreCompleto"].ToString();
+                oLlamada.Cliente = cdao.GetById((int)tabla.Rows[0]["idCliente"]);
+                oLlamada.OpcionSeleccionada = oldao.GetById((int)tabla.Rows[0]["idOpcionLlamada"]);
+                oLlamada.SubOpcionSeleccionada = soldao.GetById((int)tabla.Rows[0]["idSubOpcionLlamada"]);
             }
-            tabla.Rows[0]["detalleAccionRequerida"].ToString();
             return oLlamada;
         }
     }
