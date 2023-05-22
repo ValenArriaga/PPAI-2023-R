@@ -18,6 +18,7 @@ namespace PPAI.Services
         OpcionLlamadaEntity opcionSeleccionada = new OpcionLlamadaEntity();
         SubOpcionLlamadaEntity subopcionSeleccionada = new SubOpcionLlamadaEntity();
         List<ValidacionEntity> validaciones = new List<ValidacionEntity>();
+        ILlamadaService servicioLlamada = new LlamadaService();
 
         //Servicios
         IEstadoService estadoS = new EstadoService();
@@ -25,6 +26,7 @@ namespace PPAI.Services
         public void NuevaRtaOperador(LlamadaEntity llamada, CategoriaLlamadaEntity categoria, PantallaRegistrarRespuesta pantalla)
         {
             llamadaActual = llamada;
+            llamadaActual = servicioLlamada.GetById(id)
             categoriaSeleccionada = categoria;
             EstadoEntity enCurso = null;
             foreach (EstadoEntity estadoE in estadoS.GetAll())

@@ -34,7 +34,7 @@ namespace TPPav1.Datos
             //cadenaConexion = @"";
 
             //Valentin
-            cadenaConexion = @"cadena";        
+            cadenaConexion = @"Data Source=DESKTOP-84H3S6N\SQLEXPRESS;Initial Catalog=PPAI;Integrated Security=True";        
         }
 
         enum ResultadoTransaccion
