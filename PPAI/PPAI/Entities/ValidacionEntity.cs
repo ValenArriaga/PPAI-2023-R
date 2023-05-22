@@ -18,7 +18,6 @@ namespace PPAI.Entities
         public string AudioMensajeValidacion { get => audioMensajeValidacion; set => audioMensajeValidacion = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public int NroOrden { get => nroOrden; set => nroOrden = value; }
-
         public int Id { get => id; set => id = value; }
 
         public List<OpcionValidacionEntity> OpcionesValidacion { get => opcionesValidacion; set => opcionesValidacion = value; }

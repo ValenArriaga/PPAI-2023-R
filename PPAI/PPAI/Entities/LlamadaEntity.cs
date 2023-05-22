@@ -20,6 +20,8 @@ namespace PPAI.Entities
         private ClienteEntity cliente = new ClienteEntity();
         private string accion;
         private List<CambioEstadoEntity> cambiosEstado = new List<CambioEstadoEntity>();
+        private int id;
+
 
         public string DescripcionOperador { get => descripcionOperador; set => descripcionOperador = value; }
         public string DetalleAccionRequerida { get => detalleAccionRequerida; set => detalleAccionRequerida = value; }
@@ -33,6 +35,7 @@ namespace PPAI.Entities
         public ClienteEntity Cliente { get => cliente; set => cliente = value; }
         public string Accion { get => accion; set => accion = value; }
         public List<CambioEstadoEntity> CambiosEstado { get => cambiosEstado; set => cambiosEstado = value; }
+        public int Id { get => id; set => id = value; }
 
         public override string ToString()
         {
