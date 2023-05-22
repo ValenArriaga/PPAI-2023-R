@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace PPAI.Data.InterfacesDaos
 {
-    interface IEstadoDao
+    interface IAccionDaos
     {
-        EstadoEntity getEstadoById(int id);
+        AccionEntity getAccionById(int id);
 
     }
 }

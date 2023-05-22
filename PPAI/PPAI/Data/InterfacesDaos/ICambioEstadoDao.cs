@@ -9,7 +9,7 @@ namespace PPAI.Data.InterfacesDaos
 {
     interface ICambioEstadoDao
     {
-        CambioEstadoEntity getById(int id);
+        CambioEstadoEntity getCambioEstadoById(int id);
 
     }
 }

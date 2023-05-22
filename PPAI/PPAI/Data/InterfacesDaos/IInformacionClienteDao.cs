@@ -9,7 +9,7 @@ namespace PPAI.Data.InterfacesDaos
 {
     interface IInformacionClienteDao
     {
-        InformacionClienteEntity getById(int id);
+        InformacionClienteEntity getInformacionClienteById(int id);
 
     }
 }
