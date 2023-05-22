@@ -20,6 +20,7 @@ namespace PPAI.Data.Daos
             ClienteDao cdao = new ClienteDao();
             OpcionLlamadaDao oldao = new OpcionLlamadaDao();
             SubOpcionLlamadaDao soldao = new SubOpcionLlamadaDao();
+            CambioEstadoDao cedao = new CambioEstadoDao();
             if (tabla.Rows.Count > 0)
             {
                 oLlamada.DescripcionOperador = tabla.Rows[0]["descripcionOperador"].ToString();
@@ -28,8 +29,9 @@ namespace PPAI.Data.Daos
                 oLlamada.EncuestaEnviada = (bool)tabla.Rows[0]["encuestaEnviada"];
                 oLlamada.ObservacionAuditor = tabla.Rows[0]["observacionAuditor"].ToString();
                 oLlamada.Cliente = cdao.GetById((int)tabla.Rows[0]["idCliente"]);
-                oLlamada.OpcionSeleccionada = oldao.GetById((int)tabla.Rows[0]["idOpcionLlamada"]);
-                oLlamada.SubOpcionSeleccionada = soldao.GetById((int)tabla.Rows[0]["idSubOpcionLlamada"]);
+                oLlamada.OpcionSeleccionada = oldao.getOpcionLlamadaById((int)tabla.Rows[0]["idOpcionLlamada"]);
+                oLlamada.SubOpcionSeleccionada = soldao.getSubOpcionLlamadaById((int)tabla.Rows[0]["idSubOpcionLlamada"]);
+                oLlamada.CambiosEstado = cedao.GetCambiosByLlamadaId(id);
             }
             return oLlamada;
         }

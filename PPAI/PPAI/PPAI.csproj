@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\BDHelper.cs" />
+    <Compile Include="Data\Daos\CambioEstadoDao.cs" />
     <Compile Include="Data\Daos\CategoriaLlamadaDao.cs" />
     <Compile Include="Data\Daos\ClienteDao.cs" />
+    <Compile Include="Data\Daos\EstadoDao.cs" />
     <Compile Include="Data\Daos\InformacionClienteDao.cs" />
     <Compile Include="Data\Daos\LlamadaDao.cs" />
     <Compile Include="Data\Daos\OpcionLlamadaDao.cs" />
