@@ -18,16 +18,16 @@ namespace PPAI.Services
         OpcionLlamadaEntity opcionSeleccionada = new OpcionLlamadaEntity();
         SubOpcionLlamadaEntity subopcionSeleccionada = new SubOpcionLlamadaEntity();
         List<ValidacionEntity> validaciones = new List<ValidacionEntity>();
-        ILlamadaService servicioLlamada = new LlamadaService();
-
+        
         //Servicios
         IEstadoService estadoS = new EstadoService();
+        ILlamadaService llamadaS = new LlamadaService();
+        ICategoriaLlamadaService categoriaS = new CategoriaLlamadaService();
 
-        public void NuevaRtaOperador(LlamadaEntity llamada, CategoriaLlamadaEntity categoria, PantallaRegistrarRespuesta pantalla)
+        public void NuevaRtaOperador(int idLlamada, int idCategoria, PantallaRegistrarRespuesta pantalla)
         {
-            llamadaActual = llamada;
-            llamadaActual = servicioLlamada.GetById(id);
-            categoriaSeleccionada = categoria;
+            llamadaActual = llamadaS.GetLlamadaById(idLlamada);
+            categoriaSeleccionada = categoriaS.GetCategoriaById(idCategoria);
             EstadoEntity enCurso = null;
             foreach (EstadoEntity estadoE in estadoS.GetAll())
             {
@@ -48,8 +48,8 @@ namespace PPAI.Services
 
         public void BuscaroInfoLlamada()
         {
-            opcionSeleccionada = categoriaSeleccionada.Opcion[0];
-            subopcionSeleccionada = opcionSeleccionada.SubopcionLlamada[0];
+            opcionSeleccionada = llamadaActual.OpcionSeleccionada;
+            subopcionSeleccionada = llamadaActual.SubOpcionSeleccionada;
             foreach (ValidacionEntity validacion in subopcionSeleccionada.ValidacionRequerida)
             {
                 validaciones.Add(validacion);

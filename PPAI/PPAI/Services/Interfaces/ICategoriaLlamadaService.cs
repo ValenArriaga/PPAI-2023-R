@@ -10,5 +10,7 @@ namespace PPAI.Services.Interfaces
     internal interface ICategoriaLlamadaService
     {
         List<CategoriaLlamadaEntity> GetAll();
+
+        CategoriaLlamadaEntity GetCategoriaById(int id);
     }
 }

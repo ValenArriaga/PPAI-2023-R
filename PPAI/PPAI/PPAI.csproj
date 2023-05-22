@@ -75,7 +75,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ControladorRegistrarRespuesta.cs" />
+    <Compile Include="Services\Implementaciones\CambioEstadoService.cs" />
+    <Compile Include="Services\Implementaciones\CategoriaLlamadaService.cs" />
     <Compile Include="Services\Implementaciones\EstadoService.cs" />
+    <Compile Include="Services\Implementaciones\LlamadaService.cs" />
     <Compile Include="Services\Interfaces\ICambioEstadoService.cs" />
     <Compile Include="Services\Interfaces\ICategoriaLlamadaService.cs" />
     <Compile Include="Services\Interfaces\IClienteService.cs" />
