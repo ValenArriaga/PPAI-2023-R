@@ -20,7 +20,7 @@ namespace PPAI.Services.Implementaciones
 
         public LlamadaEntity GetLlamadaById(int id)
         {
-            return ldao.getById(id);
+            return ldao.getLlamadaById(id);
         }
     }
 }

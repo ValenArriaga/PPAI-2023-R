@@ -12,7 +12,7 @@ namespace PPAI.Data.Daos
 {
     public class LlamadaDao : ILlamadaDao
     {
-        public LlamadaEntity getById(int id)
+        public LlamadaEntity getLlamadaById(int id)
         {
             LlamadaEntity oLlamada = new LlamadaEntity();
             string consulta = "select * from llamada where idLlamada = " + id;
