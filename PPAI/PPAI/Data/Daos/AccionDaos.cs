@@ -16,7 +16,7 @@ namespace PPAI.Data.Daos
         public AccionEntity getAccionById(int id)
         {
             AccionEntity oAccion = new AccionEntity();
-            string consulta = "SELECT * FROM Validacion WHERE id =" + id;
+            string consulta = "SELECT * FROM Accion WHERE id =" + id;
 
             DataTable tabla = BDHelper.ObtenerInstancia().Consultar(consulta);
             if (tabla.Rows.Count > 0)

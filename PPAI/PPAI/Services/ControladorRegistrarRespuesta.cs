@@ -36,7 +36,7 @@ namespace PPAI.Services
             }
             if (enCurso != null)
                 llamadaActual.SetEstadoActual(enCurso, DateTime.Now);
-            BuscaroInfoLlamada();
+            BuscarInfoLlamada();
             pantalla.MostrarDatosLlamada(llamadaActual.Cliente.NombreCompleto, categoriaSeleccionada.Nombre, opcionSeleccionada.Nombre, subopcionSeleccionada.Nombre);
             List<string> nombreValidaciones = new List<string>();
             foreach (ValidacionEntity validacion in validaciones)
@@ -46,7 +46,7 @@ namespace PPAI.Services
             pantalla.MostrarValidaciones(nombreValidaciones);
         }
 
-        public void BuscaroInfoLlamada()
+        public void BuscarInfoLlamada()
         {
             opcionSeleccionada = llamadaActual.OpcionSeleccionada;
             subopcionSeleccionada = llamadaActual.SubOpcionSeleccionada;
