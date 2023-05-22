@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\BDHelper.cs" />
+    <Compile Include="Data\Daos\AccionDaos.cs" />
     <Compile Include="Data\Daos\CambioEstadoDao.cs" />
     <Compile Include="Data\Daos\CategoriaLlamadaDao.cs" />
     <Compile Include="Data\Daos\ClienteDao.cs" />
@@ -56,12 +57,18 @@
     <Compile Include="Data\Daos\OpcionLlamadaDao.cs" />
     <Compile Include="Data\Daos\SubOpcionLlamadaDao.cs" />
     <Compile Include="Data\Daos\ValidacionDao.cs" />
+    <Compile Include="Data\InterfacesDaos\IAccionDaos.cs" />
+    <Compile Include="Data\InterfacesDaos\ICambioEstadoDao.cs" />
     <Compile Include="Data\InterfacesDaos\ICategoriaLlamadaDao.cs" />
     <Compile Include="Data\Daos\OpcionValidacionDao.cs" />
+    <Compile Include="Data\InterfacesDaos\IClienteDao.cs" />
+    <Compile Include="Data\InterfacesDaos\IEstadoDao.cs" />
+    <Compile Include="Data\InterfacesDaos\IInformacionClienteDao.cs" />
     <Compile Include="Data\InterfacesDaos\ILlamadaDao.cs" />
     <Compile Include="Data\InterfacesDaos\IOpcionLlamadaDao.cs" />
     <Compile Include="Data\InterfacesDaos\ISubOpcionLlamadaDao.cs" />
     <Compile Include="Data\InterfacesDaos\IValidacionDao.cs" />
+    <Compile Include="Entities\AccionEntity.cs" />
     <Compile Include="Entities\CambioEstadoEntity.cs" />
     <Compile Include="Entities\CategoriaLlamadaEntity.cs" />
     <Compile Include="Entities\ClienteEntity.cs" />

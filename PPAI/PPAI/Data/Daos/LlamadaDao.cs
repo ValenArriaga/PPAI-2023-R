@@ -28,6 +28,7 @@ namespace PPAI.Data.Daos
                 oLlamada.Duracion = (TimeSpan)tabla.Rows[0]["duracion"];
                 oLlamada.EncuestaEnviada = (bool)tabla.Rows[0]["encuestaEnviada"];
                 oLlamada.ObservacionAuditor = tabla.Rows[0]["observacionAuditor"].ToString();
+                oLlamada.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
                 oLlamada.Cliente = cdao.GetById((int)tabla.Rows[0]["idCliente"]);
                 oLlamada.OpcionSeleccionada = oldao.getOpcionLlamadaById((int)tabla.Rows[0]["idOpcionLlamada"]);
                 oLlamada.SubOpcionSeleccionada = soldao.getSubOpcionLlamadaById((int)tabla.Rows[0]["idSubOpcionLlamada"]);

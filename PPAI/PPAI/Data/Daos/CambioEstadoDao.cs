@@ -24,6 +24,7 @@ namespace PPAI.Data.Daos
                     CambioEstadoEntity oCambio = new CambioEstadoEntity();
                     oCambio.Estado = edao.GetEstadoById((int)fila["idEstado"]);
                     oCambio.FechaHoraInicio = (DateTime)fila["fechaHoraInicio"];
+                    oCambio.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
                     lista.Add(oCambio);
                 }
             }

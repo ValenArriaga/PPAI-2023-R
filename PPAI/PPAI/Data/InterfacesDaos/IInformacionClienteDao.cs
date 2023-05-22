@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace PPAI.Data.InterfacesDaos
 {
-    interface ILlamadaDao
+    interface IInformacionClienteDao
     {
-        LlamadaEntity getLlamadaById(int id);
+        InformacionClienteEntity getInformacionClienteById(int id);
+
     }
 }
