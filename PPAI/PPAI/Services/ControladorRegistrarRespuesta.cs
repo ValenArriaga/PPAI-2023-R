@@ -26,7 +26,7 @@ namespace PPAI.Services
         public void NuevaRtaOperador(LlamadaEntity llamada, CategoriaLlamadaEntity categoria, PantallaRegistrarRespuesta pantalla)
         {
             llamadaActual = llamada;
-            llamadaActual = servicioLlamada.GetById(id)
+            llamadaActual = servicioLlamada.GetById(id);
             categoriaSeleccionada = categoria;
             EstadoEntity enCurso = null;
             foreach (EstadoEntity estadoE in estadoS.GetAll())
