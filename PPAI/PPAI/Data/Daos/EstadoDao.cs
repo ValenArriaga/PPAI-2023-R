@@ -19,6 +19,7 @@ namespace PPAI.Data.Daos
             DataTable tabla = BDHelper.ObtenerInstancia().Consultar(consulta);
             if (tabla.Rows.Count > 0)
             {
+                oEstado.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
                 oEstado.Nombre = tabla.Rows[0]["nombre"].ToString();
             }
             return oEstado;

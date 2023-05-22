@@ -23,6 +23,8 @@ namespace PPAI.Data.Daos
                 oCliente.NombreCompleto = tabla.Rows[0]["apellido"].ToString() + ", " + tabla.Rows[0]["nombre"].ToString();
                 oCliente.NroCelular = tabla.Rows[0]["nroCelular"].ToString();
                 oCliente.Info = icdao.GetInformacionByClienteID((int)tabla.Rows[0]["id"]);
+                oCliente.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
+
             }
             return oCliente;
         }
