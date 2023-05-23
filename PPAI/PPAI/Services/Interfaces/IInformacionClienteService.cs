@@ -10,7 +10,7 @@ namespace PPAI.Services.Interfaces
     internal interface IInformacionClienteService
     {
         List<InformacionClienteEntity> GetAll();
-        InformacionClienteEntity GetInformacionClienteById(int id);
+        List<InformacionClienteEntity> GetInformacionClienteById(int id);
 
     }
 }

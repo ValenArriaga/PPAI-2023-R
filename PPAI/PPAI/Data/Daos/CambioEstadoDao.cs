@@ -1,4 +1,5 @@
-﻿using PPAI.Entities;
+﻿using PPAI.Data.InterfacesDaos;
+using PPAI.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,8 +10,13 @@ using TPPav1.Datos;
 
 namespace PPAI.Data.Daos
 {
-    public class CambioEstadoDao
+    public class CambioEstadoDao : ICambioEstadoDao
     {
+        public CambioEstadoEntity GetCambioEstadoById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<CambioEstadoEntity> GetCambiosByLlamadaId(int id)
         {
             List<CambioEstadoEntity> lista = new List<CambioEstadoEntity>();

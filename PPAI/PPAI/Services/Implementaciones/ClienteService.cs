@@ -10,21 +10,17 @@ using System.Threading.Tasks;
 
 namespace PPAI.Services.Implementaciones
 {
-    class ClienteService
-    {
-        //public class ClienteService : IClienteService
-        //{
-        //    IClienteDao cdao = new ClienteDao();
-        //    public List<ClienteEntity> GetAll()
-        //    {
-        //        throw new NotImplementedException();
-        //    }
+        public class ClienteService : IClienteService
+        {
+            IClienteDao cdao = new ClienteDao();
+            public List<ClienteEntity> GetAll()
+            {
+                throw new NotImplementedException();
+            }
 
-        //    public ClienteEntity GetLlamadaById(int id)
-        //    {
-        //        return cdao.GetClienteById(id);
-        //    }
-        //}
-
-    }
+            public ClienteEntity GetClienteById(int id)
+            {
+                return cdao.GetClienteById(id);
+            }
+        }
 }

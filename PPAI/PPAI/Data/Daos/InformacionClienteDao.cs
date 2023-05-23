@@ -1,4 +1,5 @@
-﻿using PPAI.Entities;
+﻿using PPAI.Data.InterfacesDaos;
+using PPAI.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,9 +10,9 @@ using TPPav1.Datos;
 
 namespace PPAI.Data.Daos
 {
-    public class InformacionClienteDao
+    public class InformacionClienteDao : IInformacionClienteDao
     {
-        public List<InformacionClienteEntity> GetInformacionByClienteID(int ID)
+        public List<InformacionClienteEntity> GetInformacionClienteById(int ID)
         {
             List<InformacionClienteEntity> lista = new List<InformacionClienteEntity>();
             string consulta = "Select * from InformacionCliente where idCliente = " + ID;
@@ -25,7 +26,7 @@ namespace PPAI.Data.Daos
                     InformacionClienteEntity info = new InformacionClienteEntity();
                     info.DatoAValidar = fila["datoAValidar"].ToString();
                     info.Tipo = fila["tipo"].ToString();
-                    info.OpcionCorrecta = ovdao.GetById((int)fila["idOpcionCorrecta"]);
+                    info.OpcionCorrecta = ovdao.GetOpcionValidacionById((int)fila["idOpcionCorrecta"]);
                     info.Validacion = vdao.GetValidacionById((int)fila["idValidacion"]);
                     info.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
                     lista.Add(info);

@@ -1,4 +1,5 @@
-﻿using PPAI.Entities;
+﻿using PPAI.Data.InterfacesDaos;
+using PPAI.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,7 +10,7 @@ using TPPav1.Datos;
 
 namespace PPAI.Data.Daos
 {
-    public class OpcionValidacionDao
+    public class OpcionValidacionDao : IOpcionValidacionDao
     {
         public OpcionValidacionEntity GetOpcionValidacionById(int id)
         {

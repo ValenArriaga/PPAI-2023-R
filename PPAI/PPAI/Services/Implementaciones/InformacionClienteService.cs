@@ -12,15 +12,15 @@ namespace PPAI.Services.Implementaciones
 {
     public class InformacionClienteService : IInformacionClienteService
     {
-        //IInformacionClienteDao ldao = new InformacionClienteDao();
-        //public List<InformacionClienteEntity> GetAll()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        IInformacionClienteDao ldao = new InformacionClienteDao();
+        public List<InformacionClienteEntity> GetAll()
+        {
+            throw new NotImplementedException();
+        }
 
-        //public InformacionClienteEntity GetInformacionClienteById(int id)
-        //{
-        //    return ldao.GetInformacionClienteById(id);
-        //}
+        public List<InformacionClienteEntity> GetInformacionClienteById(int id)
+        {
+            return ldao.GetInformacionClienteById(id);
+        }
     }
 }

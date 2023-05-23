@@ -10,19 +10,19 @@ using System.Threading.Tasks;
 
 namespace PPAI.Services.Implementaciones
 {
-    //public class CambioEstadoService : ICambioEstadoService
-    //{
-    //    ICambioEstadoDao cedao = new CambioEstadoDao();
-    //    public List<CambioEstadoEntity> GetAll()
-    //    {
-    //        throw new NotImplementedException();
-    //    }
+    public class CambioEstadoService : ICambioEstadoService
+    {
+        ICambioEstadoDao cedao = new CambioEstadoDao();
+        public List<CambioEstadoEntity> GetAll()
+        {
+            throw new NotImplementedException();
+        }
 
-    //    public CambioEstadoService GetCambioEstadoById(int id)
-    //    {
-    //        return cedao.GetCambioEstadoById(id);
-    //    }
+        public CambioEstadoEntity GetCambioEstadoById(int id)
+        {
+            return cedao.GetCambioEstadoById(id);
+        }
 
-
-    //}
+        
+    }
 }

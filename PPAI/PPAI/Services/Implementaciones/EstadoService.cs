@@ -12,16 +12,16 @@ namespace PPAI.Services.Implementaciones
 {
     public class EstadoService : IEstadoService
     {
-        //IEstadoDao ldao = new EstadoDao();
-        //public List<EstadoEntity> GetAll()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        IEstadoDao ldao = new EstadoDao();
+        public List<EstadoEntity> GetAll()
+        {
+            throw new NotImplementedException();
+        }
 
-        //public EstadoEntity GetEstadoById(int id)
-        //{
-        //    return ldao.GetEstadoById(id);
-        //}
+        public EstadoEntity GetEstadoById(int id)
+        {
+            return ldao.GetEstadoById(id);
+        }
     }
 
 }
