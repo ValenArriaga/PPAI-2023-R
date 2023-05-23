@@ -10,6 +10,7 @@ namespace PPAI.Data.InterfacesDaos
     interface IAccionDao
     {
         AccionEntity GetAccionById(int id);
+        List<AccionEntity> GetAll();
 
     }
 }

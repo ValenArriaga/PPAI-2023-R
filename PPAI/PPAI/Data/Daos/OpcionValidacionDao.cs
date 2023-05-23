@@ -21,7 +21,7 @@ namespace PPAI.Data.Daos
             {
                 oOpcion.Correcta = tabla.Rows[0]["correcta"].ToString();
                 oOpcion.Descripcion = tabla.Rows[0]["descripcion"].ToString();
-                oOpcion.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
+                oOpcion.Id = Int32.Parse(tabla.Rows[0]["idOpcionValidacion"].ToString());
 
             }
             return oOpcion;

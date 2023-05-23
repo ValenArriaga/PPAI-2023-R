@@ -15,7 +15,7 @@ namespace PPAI.Services.Implementaciones
         IAccionDao adao = new AccionDao();
         public List<AccionEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return adao.GetAll();
         }
 
         public AccionEntity GetAccionById(int id)

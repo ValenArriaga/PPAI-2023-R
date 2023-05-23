@@ -18,16 +18,30 @@ namespace PPAI.Services
         OpcionLlamadaEntity opcionSeleccionada = new OpcionLlamadaEntity();
         SubOpcionLlamadaEntity subopcionSeleccionada = new SubOpcionLlamadaEntity();
         List<ValidacionEntity> validaciones = new List<ValidacionEntity>();
+        PantallaRegistrarRespuesta _pantalla;
         
         //Servicios
         IEstadoService estadoS = new EstadoService();
         ILlamadaService llamadaS = new LlamadaService();
         ICategoriaLlamadaService categoriaS = new CategoriaLlamadaService();
 
+        internal void BuscarDatosLlamada()
+        {
+            BuscarInfoLlamada();
+            List<string> nombreValidaciones = new List<string>();
+            foreach (ValidacionEntity validacion in validaciones)
+            {
+                nombreValidaciones.Add(validacion.Nombre);
+            }
+            _pantalla.MostrarDatosLlamada(llamadaActual.Cliente.NombreCompleto, categoriaSeleccionada.Nombre, opcionSeleccionada.Nombre, subopcionSeleccionada.Nombre);
+            _pantalla.MostrarValidaciones(nombreValidaciones);
+        }
+
         public void NuevaRtaOperador(int idLlamada, int idCategoria, PantallaRegistrarRespuesta pantalla)
         {
             llamadaActual = llamadaS.GetLlamadaById(idLlamada);
-            categoriaSeleccionada = categoriaS.GetCategoriaById(idCategoria);
+            categoriaSeleccionada = categoriaS.GetCategoriaLlamadaById(idCategoria);
+            _pantalla = pantalla;
             EstadoEntity enCurso = null;
             foreach (EstadoEntity estadoE in estadoS.GetAll())
             {
@@ -36,14 +50,7 @@ namespace PPAI.Services
             }
             if (enCurso != null)
                 llamadaActual.SetEstadoActual(enCurso, DateTime.Now);
-            BuscarInfoLlamada();
-            pantalla.MostrarDatosLlamada(llamadaActual.Cliente.NombreCompleto, categoriaSeleccionada.Nombre, opcionSeleccionada.Nombre, subopcionSeleccionada.Nombre);
-            List<string> nombreValidaciones = new List<string>();
-            foreach (ValidacionEntity validacion in validaciones)
-            {
-                nombreValidaciones.Add(validacion.Nombre);
-            }
-            pantalla.MostrarValidaciones(nombreValidaciones);
+            
         }
 
         public void BuscarInfoLlamada()
@@ -73,6 +80,20 @@ namespace PPAI.Services
             FinCU();
         }
 
+        public void CancelarLlamada()
+        {
+            EstadoEntity cancelada = null;
+            foreach (EstadoEntity estadoE in estadoS.GetAll())
+            {
+                if (estadoE.EsCancelada())
+                    cancelada = estadoE;
+            }
+            DateTime now = DateTime.Now;
+            llamadaActual.CalcularDuracion(now);
+            if (cancelada != null)
+                llamadaActual.SetEstadoActual(cancelada, now);
+        }
+
         public void FinCU()
         {
             MessageBox.Show("Respuesta registrada con exito");
@@ -80,6 +101,7 @@ namespace PPAI.Services
 
         public void LlamarCU28(string accion)
         {
+            llamadaActual.Accion = accion;
             MessageBox.Show("Accion registrada con exito");
         }
 

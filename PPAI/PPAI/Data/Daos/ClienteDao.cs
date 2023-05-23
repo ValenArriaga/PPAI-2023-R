@@ -15,7 +15,7 @@ namespace PPAI.Data.Daos
         public ClienteEntity GetClienteById(int id)
         {
             ClienteEntity oCliente = new ClienteEntity();
-            string consulta = "Select * from Clientes where id = " + id;
+            string consulta = "Select * from Cliente where id = " + id;
             DataTable tabla = BDHelper.ObtenerInstancia().Consultar(consulta);
             InformacionClienteDao icdao = new InformacionClienteDao();
             if (tabla.Rows.Count > 0)
@@ -23,7 +23,7 @@ namespace PPAI.Data.Daos
                 oCliente.Dni = (int)tabla.Rows[0]["dni"];
                 oCliente.NombreCompleto = tabla.Rows[0]["apellido"].ToString() + ", " + tabla.Rows[0]["nombre"].ToString();
                 oCliente.NroCelular = (int)tabla.Rows[0]["nroCelular"];
-                oCliente.Info = icdao.GetInformacionByClienteID((int)tabla.Rows[0]["id"]);
+                oCliente.Info = icdao.GetInformacionClienteById((int)tabla.Rows[0]["id"]);
                 oCliente.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
 
             }

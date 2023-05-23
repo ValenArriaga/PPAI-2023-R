@@ -15,7 +15,7 @@ namespace PPAI.Services.Implementaciones
         IEstadoDao ldao = new EstadoDao();
         public List<EstadoEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return ldao.GetAll();
         }
 
         public EstadoEntity GetEstadoById(int id)

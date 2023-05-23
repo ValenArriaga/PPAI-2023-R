@@ -23,7 +23,7 @@ namespace PPAI.Data.Daos
             SubOpcionLlamadaDao soldao = new SubOpcionLlamadaDao();
             if (tabla.Rows.Count > 0)
             {
-               oOpcionLlamada.AudioMensajeSubopciones = tabla.Rows[0]["audioMensajeSubopciones"].ToString();
+               oOpcionLlamada.AudioMensajeSubopciones = tabla.Rows[0]["audioMensajesSubopciones"].ToString();
                oOpcionLlamada.MensajeSubopciones = tabla.Rows[0]["mensajeSubopciones"].ToString();
                oOpcionLlamada.Nombre = tabla.Rows[0]["nombre"].ToString();
                oOpcionLlamada.NroOrden = Int32.Parse(tabla.Rows[0]["nroOrden"].ToString());
@@ -37,7 +37,7 @@ namespace PPAI.Data.Daos
         public List <OpcionLlamadaEntity> GetOpcionByCategoriaId(int id)
         {
             List<OpcionLlamadaEntity> lista = new List<OpcionLlamadaEntity>();
-            string consulta = "SELECT * FROM OpcionLlamada WHERE idOpcion = " + id;
+            string consulta = "SELECT * FROM OpcionLlamada WHERE idCategoria = " + id;
             DataTable tabla = BDHelper.ObtenerInstancia().Consultar(consulta);
             ValidacionDao vdao = new ValidacionDao();
             SubOpcionLlamadaDao soldao = new SubOpcionLlamadaDao();
@@ -46,7 +46,7 @@ namespace PPAI.Data.Daos
                 foreach (DataRow fila in tabla.Rows)
                 {
                     OpcionLlamadaEntity oOpcionLlamada = new OpcionLlamadaEntity();
-                    oOpcionLlamada.AudioMensajeSubopciones = tabla.Rows[0]["audioMensajeSubopciones"].ToString();
+                    oOpcionLlamada.AudioMensajeSubopciones = tabla.Rows[0]["audioMensajesSubopciones"].ToString();
                     oOpcionLlamada.MensajeSubopciones = tabla.Rows[0]["mensajeSubopciones"].ToString();
                     oOpcionLlamada.Nombre = tabla.Rows[0]["nombre"].ToString();
                     oOpcionLlamada.NroOrden = Int32.Parse(tabla.Rows[0]["nroOrden"].ToString());

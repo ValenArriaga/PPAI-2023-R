@@ -21,7 +21,7 @@ namespace PPAI.Data.Daos
             if (tabla.Rows.Count > 0)
             {
                 oEstado.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
-                oEstado.Nombre = tabla.Rows[0]["nombre"].ToString();
+                oEstado.Nombre = tabla.Rows[0]["nombre"].ToString().Trim();
             }
             return oEstado;
         }

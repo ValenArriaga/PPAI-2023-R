@@ -25,11 +25,14 @@ namespace PPAI.Data.Daos
             {
                 oLlamada.DescripcionOperador = tabla.Rows[0]["descripcionOperador"].ToString();
                 oLlamada.Accion = tabla.Rows[0]["detalleAccionRequerida"].ToString();
-                oLlamada.Duracion = (TimeSpan)tabla.Rows[0]["duracion"];
-                oLlamada.EncuestaEnviada = (bool)tabla.Rows[0]["encuestaEnviada"];
+                string encuesta = tabla.Rows[0]["encuestaEnviada"].ToString();
+                if (encuesta == "1")
+                    oLlamada.EncuestaEnviada = true;
+                else
+                    oLlamada.EncuestaEnviada = false;
                 oLlamada.ObservacionAuditor = tabla.Rows[0]["observacionAuditor"].ToString();
-                oLlamada.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
-                oLlamada.Cliente = cdao.GetById((int)tabla.Rows[0]["idCliente"]);
+                oLlamada.Id = Int32.Parse(tabla.Rows[0]["idLlamada"].ToString());
+                oLlamada.Cliente = cdao.GetClienteById((int)tabla.Rows[0]["idCliente"]);
                 oLlamada.OpcionSeleccionada = oldao.GetOpcionLlamadaById((int)tabla.Rows[0]["idOpcionLlamada"]);
                 oLlamada.SubOpcionSeleccionada = soldao.GetSubOpcionLlamadaById((int)tabla.Rows[0]["idSubOpcionLlamada"]);
                 oLlamada.CambiosEstado = cedao.GetCambiosByLlamadaId(id);

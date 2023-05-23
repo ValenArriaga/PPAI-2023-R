@@ -28,7 +28,7 @@ namespace PPAI.Data.Daos
                     info.Tipo = fila["tipo"].ToString();
                     info.OpcionCorrecta = ovdao.GetOpcionValidacionById((int)fila["idOpcionCorrecta"]);
                     info.Validacion = vdao.GetValidacionById((int)fila["idValidacion"]);
-                    info.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
+                    info.Id = Int32.Parse(tabla.Rows[0]["idInfoCliente"].ToString());
                     lista.Add(info);
 
                 }

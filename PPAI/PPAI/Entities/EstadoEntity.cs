@@ -21,7 +21,7 @@ namespace PPAI.Entities
 
         public bool EsEnCurso()
         {
-            if (Nombre == "EnCurso")
+            if (Nombre.Contains("EnCurso"))
                 return true;
             else
                 return false;
@@ -29,10 +29,18 @@ namespace PPAI.Entities
 
         public bool EsFinalizada()
         {
-            if (Nombre == "Finalizada")
+            if (Nombre.Contains("Finalizada"))
                 return true;
             else
                 return false;
+        }
+
+        internal bool EsCancelada()
+        {
+            if (Nombre.Contains("Cancelada"))
+                return true;
+            else
+                return false; ;
         }
     }
 }

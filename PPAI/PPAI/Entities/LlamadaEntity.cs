@@ -65,7 +65,7 @@ namespace PPAI.Entities
             }
             if (horaInicio != null)
             {
-                Duracion = horaInicio - horaFin;
+                Duracion = horaFin - horaInicio;
             }
         }
     }
