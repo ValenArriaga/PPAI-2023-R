@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 
 namespace PPAI.Services.Implementaciones
 {
-    public class LlamadaService : ILlamadaService
+    public class SubOpcionLlamadaService : ISubOpcionLlamadaService
     {
-        ILlamadaDao ldao = new LlamadaDao();
-        public List<LlamadaEntity> GetAll()
+        ISubOpcionLlamadaDao ldao = new SubOpcionLlamadaDao();
+        public List<SubOpcionLlamadaEntity> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public LlamadaEntity GetLlamadaById(int id)
+        public SubOpcionLlamadaEntity GetSubOpcionLlamadaById(int id)
         {
-            return ldao.GetLlamadaById(id);
+            return ldao.GetSubOpcionLlamadaById(id);
         }
     }
 }

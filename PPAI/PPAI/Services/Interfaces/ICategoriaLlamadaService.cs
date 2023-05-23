@@ -11,6 +11,6 @@ namespace PPAI.Services.Interfaces
     {
         List<CategoriaLlamadaEntity> GetAll();
 
-        CategoriaLlamadaEntity GetCategoriaById(int id);
+        CategoriaLlamadaEntity GetCategoriaLlamadaById(int id);
     }
 }

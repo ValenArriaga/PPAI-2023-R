@@ -12,7 +12,7 @@ namespace PPAI.Data.Daos
 {
     class ValidacionDao : IValidacionDao
     {
-        public ValidacionEntity getValidacionById(int id)
+        public ValidacionEntity GetValidacionById(int id)
         {
             ValidacionEntity oValidacion = new ValidacionEntity();
             string consulta = "SELECT * FROM Validacion WHERE id =" + id;
@@ -28,7 +28,7 @@ namespace PPAI.Data.Daos
             return oValidacion;
         }
 
-        public List <ValidacionEntity> getValidacionBySubOpcionId(int id)
+        public List <ValidacionEntity> GetValidacionBySubOpcionId(int id)
         {
             List<ValidacionEntity> lista = new List<ValidacionEntity>();
             string consulta = "SELECT * FROM Validacion WHERE idSubopcion = " + id;
@@ -45,14 +45,14 @@ namespace PPAI.Data.Daos
                     oValidacion.NroOrden = Int32.Parse(fila["nroOrden"].ToString());
                     oValidacion.Id = Int32.Parse(fila["id"].ToString());
 
-                    oValidacion.OpcionesValidacion = ovdao.getOpcionesByIdValidacion(oValidacion.Id);
+                    oValidacion.OpcionesValidacion = ovdao.GetOpcionesByIdValidacion(oValidacion.Id);
                     lista.Add(oValidacion);
                 }
             }
             return lista;
         }
 
-        public List<ValidacionEntity> getValidacionByOpcionId(int id)
+        public List<ValidacionEntity> GetValidacionByOpcionId(int id)
         {
             List<ValidacionEntity> lista = new List<ValidacionEntity>();
             string consulta = "SELECT * FROM Validacion WHERE idOpcion = " + id;
@@ -68,7 +68,7 @@ namespace PPAI.Data.Daos
                     oValidacion.NroOrden = Int32.Parse(fila["nroOrden"].ToString());
                     oValidacion.Id = Int32.Parse(fila["id"].ToString());
 
-                    oValidacion.OpcionesValidacion = ovdao.getOpcionesByIdValidacion(oValidacion.Id);
+                    oValidacion.OpcionesValidacion = ovdao.GetOpcionesByIdValidacion(oValidacion.Id);
                     lista.Add(oValidacion);
                 }
             }

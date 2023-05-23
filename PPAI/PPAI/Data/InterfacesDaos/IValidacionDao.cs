@@ -9,9 +9,9 @@ namespace PPAI.Data.InterfacesDaos
 {
     interface IValidacionDao
     {
-        ValidacionEntity getValidacionById(int id);
-        List <ValidacionEntity> getValidacionBySubOpcionId(int id);
-        List<ValidacionEntity> getValidacionByOpcionId(int id);
+        ValidacionEntity GetValidacionById(int id);
+        List <ValidacionEntity> GetValidacionBySubOpcionId(int id);
+        List<ValidacionEntity> GetValidacionByOpcionId(int id);
 
 
     }

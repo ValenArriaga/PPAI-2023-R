@@ -8,7 +8,7 @@ namespace PPAI.Data.InterfacesDaos
 {
     interface IEstadoDao
     {
-        EstadoEntity getEstadoById(int id);
+        EstadoEntity GetEstadoById(int id);
 
     }
 }

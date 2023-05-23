@@ -9,6 +9,7 @@ namespace PPAI.Services.Interfaces
 {
     internal interface ICambioEstadoService
     {
-        List<CambioEstadoEntity> GetAllByLlamada();
+        List<CambioEstadoEntity> GetAll();
+        CambioEstadoEntity GetCambioEstadoById(int id);
     }
 }

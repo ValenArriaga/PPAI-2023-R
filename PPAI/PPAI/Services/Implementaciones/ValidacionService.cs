@@ -8,19 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PPAI.Services.Implementaciones
 {
-    public class LlamadaService : ILlamadaService
+    public class ValidacionService : IValidacionService
     {
-        ILlamadaDao ldao = new LlamadaDao();
-        public List<LlamadaEntity> GetAll()
+        IValidacionDao ldao = new ValidacionDao();
+        public List<ValidacionEntity> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public LlamadaEntity GetLlamadaById(int id)
+        public ValidacionEntity GetValidacionById(int id)
         {
-            return ldao.GetLlamadaById(id);
+            return ldao.GetValidacionById(id);
         }
     }
 }

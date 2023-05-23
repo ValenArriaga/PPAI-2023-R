@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\BDHelper.cs" />
-    <Compile Include="Data\Daos\AccionDaos.cs" />
+    <Compile Include="Data\Daos\AccionDao.cs" />
     <Compile Include="Data\Daos\CambioEstadoDao.cs" />
     <Compile Include="Data\Daos\CategoriaLlamadaDao.cs" />
     <Compile Include="Data\Daos\ClienteDao.cs" />
@@ -57,7 +57,7 @@
     <Compile Include="Data\Daos\OpcionLlamadaDao.cs" />
     <Compile Include="Data\Daos\SubOpcionLlamadaDao.cs" />
     <Compile Include="Data\Daos\ValidacionDao.cs" />
-    <Compile Include="Data\InterfacesDaos\IAccionDaos.cs" />
+    <Compile Include="Data\InterfacesDaos\IAccionDao.cs" />
     <Compile Include="Data\InterfacesDaos\ICambioEstadoDao.cs" />
     <Compile Include="Data\InterfacesDaos\ICategoriaLlamadaDao.cs" />
     <Compile Include="Data\Daos\OpcionValidacionDao.cs" />
@@ -66,6 +66,7 @@
     <Compile Include="Data\InterfacesDaos\IInformacionClienteDao.cs" />
     <Compile Include="Data\InterfacesDaos\ILlamadaDao.cs" />
     <Compile Include="Data\InterfacesDaos\IOpcionLlamadaDao.cs" />
+    <Compile Include="Data\InterfacesDaos\IOpcionValidacionDao.cs" />
     <Compile Include="Data\InterfacesDaos\ISubOpcionLlamadaDao.cs" />
     <Compile Include="Data\InterfacesDaos\IValidacionDao.cs" />
     <Compile Include="Entities\AccionEntity.cs" />
@@ -82,10 +83,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ControladorRegistrarRespuesta.cs" />
+    <Compile Include="Services\Implementaciones\AccionService.cs" />
     <Compile Include="Services\Implementaciones\CambioEstadoService.cs" />
     <Compile Include="Services\Implementaciones\CategoriaLlamadaService.cs" />
+    <Compile Include="Services\Implementaciones\ClienteService.cs" />
     <Compile Include="Services\Implementaciones\EstadoService.cs" />
+    <Compile Include="Services\Implementaciones\InformacionClienteService.cs" />
     <Compile Include="Services\Implementaciones\LlamadaService.cs" />
+    <Compile Include="Services\Implementaciones\OpcionLlamadaService.cs" />
+    <Compile Include="Services\Implementaciones\OpcionValidacionService.cs" />
+    <Compile Include="Services\Implementaciones\SubOpcionLlamadaService.cs" />
+    <Compile Include="Services\Implementaciones\ValidacionService.cs" />
+    <Compile Include="Services\Interfaces\IAccionService.cs" />
     <Compile Include="Services\Interfaces\ICambioEstadoService.cs" />
     <Compile Include="Services\Interfaces\ICategoriaLlamadaService.cs" />
     <Compile Include="Services\Interfaces\IClienteService.cs" />

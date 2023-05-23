@@ -1,5 +1,5 @@
-﻿using PPAI.Entities;
-using System;
+﻿using System;
+using PPAI.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +10,6 @@ namespace PPAI.Services.Interfaces
     internal interface  IClienteService
     {
         List<ClienteEntity> GetAll();
+        ClienteEntity GetClienteById(int id);
     }
 }

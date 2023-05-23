@@ -9,8 +9,8 @@ namespace PPAI.Data.InterfacesDaos
 {
     interface ISubOpcionLlamadaDao
     {
-        SubOpcionLlamadaEntity getSubOpcionLlamadaById(int id);
-        List<SubOpcionLlamadaEntity> getSubOpcionByOpcionId(int id);
+        SubOpcionLlamadaEntity GetSubOpcionLlamadaById(int id);
+        List<SubOpcionLlamadaEntity> GetSubOpcionByOpcionId(int id);
 
     }
 }

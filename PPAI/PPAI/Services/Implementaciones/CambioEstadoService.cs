@@ -1,4 +1,6 @@
-﻿using PPAI.Entities;
+﻿using PPAI.Data.Daos;
+using PPAI.Data.InterfacesDaos;
+using PPAI.Entities;
 using PPAI.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,11 +10,19 @@ using System.Threading.Tasks;
 
 namespace PPAI.Services.Implementaciones
 {
-    public class CambioEstadoService : ICambioEstadoService
-    {
-        public List<CambioEstadoEntity> GetAllByLlamada()
-        {
-            throw new NotImplementedException();
-        }
-    }
+    //public class CambioEstadoService : ICambioEstadoService
+    //{
+    //    ICambioEstadoDao cedao = new CambioEstadoDao();
+    //    public List<CambioEstadoEntity> GetAll()
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+
+    //    public CambioEstadoService GetCambioEstadoById(int id)
+    //    {
+    //        return cedao.GetCambioEstadoById(id);
+    //    }
+
+
+    //}
 }

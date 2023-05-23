@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace PPAI.Services.Interfaces
 {
-    internal interface IOpcionLlamadaService
+    internal interface IAccionService
     {
-        List<OpcionLlamadaEntity> GetAll();
-        OpcionLlamadaEntity GetOpcionLlamadaById(int id);
-
+        List<AccionEntity> GetAll();
+        AccionEntity GetAccionById(int id);
     }
 }

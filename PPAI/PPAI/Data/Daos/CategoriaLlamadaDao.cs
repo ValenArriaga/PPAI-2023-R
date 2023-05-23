@@ -12,7 +12,7 @@ namespace PPAI.Data.Daos
 {
     class CategoriaLlamadaDao : ICategoriaLlamadaDao
     {
-        public CategoriaLlamadaEntity getCategoriaLlamadaByid(int id)
+        public CategoriaLlamadaEntity GetCategoriaLlamadaByid(int id)
         {
             CategoriaLlamadaEntity oCategoriaLlamada = new CategoriaLlamadaEntity();
             string consulta = "SELECT * FROM CategoriaLlamada WHERE id =" + id;
@@ -25,7 +25,7 @@ namespace PPAI.Data.Daos
                 oCategoriaLlamada.Nombre = tabla.Rows[0]["nombre"].ToString();
                 oCategoriaLlamada.NroOrden = Int32.Parse(tabla.Rows[0]["nroOrden"].ToString());
                 oCategoriaLlamada.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
-                oCategoriaLlamada.Opcion = oldao.getOpcionByCategoriaId(oCategoriaLlamada.Id); 
+                oCategoriaLlamada.Opcion = oldao.GetOpcionByCategoriaId(oCategoriaLlamada.Id); 
 
             }
             return oCategoriaLlamada;

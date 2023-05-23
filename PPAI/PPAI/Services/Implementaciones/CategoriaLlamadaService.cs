@@ -18,9 +18,9 @@ namespace PPAI.Services.Implementaciones
             throw new NotImplementedException();
         }
 
-        public CategoriaLlamadaEntity GetCategoriaById(int id)
+        public CategoriaLlamadaEntity GetCategoriaLlamadaById(int id)
         {
-            return cldao.getCategoriaLlamadaByid(id);
+            return cldao.GetCategoriaLlamadaByid(id);
         }
     }
 }

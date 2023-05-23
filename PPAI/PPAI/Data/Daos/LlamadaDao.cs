@@ -12,7 +12,7 @@ namespace PPAI.Data.Daos
 {
     public class LlamadaDao : ILlamadaDao
     {
-        public LlamadaEntity getLlamadaById(int id)
+        public LlamadaEntity GetLlamadaById(int id)
         {
             LlamadaEntity oLlamada = new LlamadaEntity();
             string consulta = "select * from llamada where idLlamada = " + id;
@@ -30,11 +30,13 @@ namespace PPAI.Data.Daos
                 oLlamada.ObservacionAuditor = tabla.Rows[0]["observacionAuditor"].ToString();
                 oLlamada.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
                 oLlamada.Cliente = cdao.GetById((int)tabla.Rows[0]["idCliente"]);
-                oLlamada.OpcionSeleccionada = oldao.getOpcionLlamadaById((int)tabla.Rows[0]["idOpcionLlamada"]);
-                oLlamada.SubOpcionSeleccionada = soldao.getSubOpcionLlamadaById((int)tabla.Rows[0]["idSubOpcionLlamada"]);
+                oLlamada.OpcionSeleccionada = oldao.GetOpcionLlamadaById((int)tabla.Rows[0]["idOpcionLlamada"]);
+                oLlamada.SubOpcionSeleccionada = soldao.GetSubOpcionLlamadaById((int)tabla.Rows[0]["idSubOpcionLlamada"]);
                 oLlamada.CambiosEstado = cedao.GetCambiosByLlamadaId(id);
+
             }
             return oLlamada;
         }
+
     }
 }

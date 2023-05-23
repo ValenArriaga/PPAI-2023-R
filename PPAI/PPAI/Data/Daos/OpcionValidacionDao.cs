@@ -11,7 +11,7 @@ namespace PPAI.Data.Daos
 {
     public class OpcionValidacionDao
     {
-        public OpcionValidacionEntity GetById(int id)
+        public OpcionValidacionEntity GetOpcionValidacionById(int id)
         {
             OpcionValidacionEntity oOpcion = new OpcionValidacionEntity();
             string consulta = "Select * from OpcionValidacion where idOpcionValidacion = " + id;

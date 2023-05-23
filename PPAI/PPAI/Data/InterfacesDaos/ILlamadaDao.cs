@@ -9,6 +9,6 @@ namespace PPAI.Data.InterfacesDaos
 {
     interface ILlamadaDao
     {
-        LlamadaEntity getLlamadaById(int id);
+        LlamadaEntity GetLlamadaById(int id);
     }
 }

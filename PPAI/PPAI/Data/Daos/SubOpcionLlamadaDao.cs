@@ -12,7 +12,7 @@ namespace PPAI.Data.Daos
 {
     class SubOpcionLlamadaDao : ISubOpcionLlamadaDao
     {
-        public SubOpcionLlamadaEntity getSubOpcionLlamadaById(int id)
+        public SubOpcionLlamadaEntity GetSubOpcionLlamadaById(int id)
         {
             SubOpcionLlamadaEntity oSubOpcionLlamada = new SubOpcionLlamadaEntity();
             string consulta = "SELECT * FROM SubOpcionLlamada WHERE id =" + id;
@@ -24,13 +24,13 @@ namespace PPAI.Data.Daos
                oSubOpcionLlamada.Nombre = tabla.Rows[0]["nombre"].ToString();
                oSubOpcionLlamada.NroOrden = Int32.Parse(tabla.Rows[0]["nroOrden"].ToString());
                oSubOpcionLlamada.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
-               oSubOpcionLlamada.ValidacionRequerida = vdao.getValidacionBySubOpcionId(Int32.Parse(tabla.Rows[0]["id"].ToString()));
+               oSubOpcionLlamada.ValidacionRequerida = vdao.GetValidacionBySubOpcionId(Int32.Parse(tabla.Rows[0]["id"].ToString()));
 
             }
             return oSubOpcionLlamada;
         }
 
-        public List<SubOpcionLlamadaEntity> getSubOpcionByOpcionId(int id)
+        public List<SubOpcionLlamadaEntity> GetSubOpcionByOpcionId(int id)
         {
             List<SubOpcionLlamadaEntity> lista = new List<SubOpcionLlamadaEntity>();
             string consulta = "SELECT * FROM SubOpcionLlamada WHERE idOpcion = " + id;
@@ -44,7 +44,7 @@ namespace PPAI.Data.Daos
                     oSubOpcionLlamada.Nombre = tabla.Rows[0]["nombre"].ToString();
                     oSubOpcionLlamada.NroOrden = Int32.Parse(tabla.Rows[0]["nroOrden"].ToString());
                     oSubOpcionLlamada.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
-                    oSubOpcionLlamada.ValidacionRequerida = vdao.getValidacionBySubOpcionId(Int32.Parse(tabla.Rows[0]["id"].ToString()));
+                    oSubOpcionLlamada.ValidacionRequerida = vdao.GetValidacionBySubOpcionId(Int32.Parse(tabla.Rows[0]["id"].ToString()));
 
                     lista.Add(oSubOpcionLlamada);
                 }

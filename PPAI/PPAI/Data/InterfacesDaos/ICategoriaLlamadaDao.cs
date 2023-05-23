@@ -9,7 +9,7 @@ namespace PPAI.Data.InterfacesDaos
 {
     interface ICategoriaLlamadaDao
     {
-        CategoriaLlamadaEntity getCategoriaLlamadaByid(int id);
+        CategoriaLlamadaEntity GetCategoriaLlamadaByid(int id);
 
         
     }

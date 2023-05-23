@@ -10,18 +10,17 @@ using System.Threading.Tasks;
 
 namespace PPAI.Services.Implementaciones
 {
-    public class EstadoService : IEstadoService
+    public class InformacionClienteService : IInformacionClienteService
     {
-        //IEstadoDao ldao = new EstadoDao();
-        //public List<EstadoEntity> GetAll()
+        //IInformacionClienteDao ldao = new InformacionClienteDao();
+        //public List<InformacionClienteEntity> GetAll()
         //{
         //    throw new NotImplementedException();
         //}
 
-        //public EstadoEntity GetEstadoById(int id)
+        //public InformacionClienteEntity GetInformacionClienteById(int id)
         //{
-        //    return ldao.GetEstadoById(id);
+        //    return ldao.GetInformacionClienteById(id);
         //}
     }
-
 }
