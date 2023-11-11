@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace PPAI.Entities
 {
-    public class EstadoEntity
+    public class EstadoEntity : Entity
     {
         private string nombre;
-        private int id;
 
         public string Nombre { get => nombre; set => nombre = value; }
-        public int Id { get => id; set => id = value; }
 
         public override string ToString()
         {

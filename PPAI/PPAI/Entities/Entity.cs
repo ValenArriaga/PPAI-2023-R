@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace PPAI.Entities
 {
-    public class AccionEntity : Entity
+    public abstract class Entity
     {
-        private string descripcion;
+        protected int id;
 
-        public string Descripcion { get => descripcion; set => descripcion = value; }
         public int Id { get => id; set => id = value; }
-
     }
 }

@@ -21,17 +21,6 @@ namespace TPPav1.Datos
         {
             conexion = new SqlConnection();
             comando = new SqlCommand();
-            //Exe
-            //cadenaConexion = @"";
-
-            //Trini
-            //cadenaConexion = @"";
-
-            //Mile
-            //cadenaConexion = @"";
-
-            //Pedro
-            //cadenaConexion = @"";
 
             //Valentin
             cadenaConexion = @"Data Source=DESKTOP-84H3S6N\SQLEXPRESS;Initial Catalog=PPAI;Integrated Security=True";        
@@ -72,8 +61,6 @@ namespace TPPav1.Datos
 
         public int Actualizar(string consultaSQL)
         {
-            //try
-            //{
             int filasAfectadas = 0;
             conexion.ConnectionString = cadenaConexion;
             conexion.Open();
@@ -85,11 +72,23 @@ namespace TPPav1.Datos
 
             conexion.Close();
             return filasAfectadas;
-            //}
-            //catch
-            //{
-            //return 0;
-            //}
+        }
+
+        public int Insertar(string consultaSQL, string tabla)
+        {
+            int id;
+            conexion.ConnectionString = cadenaConexion;
+            conexion.Open();
+
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = consultaSQL;
+            comando.ExecuteNonQuery();
+
+            id = (int) ConsultaSQLScalar("Select * from " + tabla + " order by 1 desc");
+            
+            conexion.Close();
+            return id;
         }
 
         public void ConectarConTransaccion()
@@ -147,13 +146,9 @@ namespace TPPav1.Datos
         }
         public object ConsultaSQLScalar(string consultaSql)
         {
-           
-
                 comando.CommandType = CommandType.Text;
                 comando.CommandText = consultaSql;
                 return comando.ExecuteScalar();
-                
-  
         }
 
     }

@@ -36,9 +36,48 @@ namespace PPAI.Data.Daos
                 oLlamada.OpcionSeleccionada = oldao.GetOpcionLlamadaById((int)tabla.Rows[0]["idOpcionLlamada"]);
                 oLlamada.SubOpcionSeleccionada = soldao.GetSubOpcionLlamadaById((int)tabla.Rows[0]["idSubOpcionLlamada"]);
                 oLlamada.CambiosEstado = cedao.GetCambiosByLlamadaId(id);
-
+                if (oLlamada.CambiosEstado.Count > 0) 
+                    oLlamada.EstadoActual = oLlamada.CambiosEstado[oLlamada.CambiosEstado.Count - 1].EstadoAP;
             }
             return oLlamada;
+        }
+
+        public int NuevaLlamada()
+        {
+            int nuevoId;
+            string tabla = "Llamada";
+            string consulta = "insert into Llamada(idCliente, idSubOpcionLlamada, idOpcionLlamada, idUsuario, Estado)" +
+                "values(1, 1, 1, 1, 1)";
+            nuevoId = BDHelper.ObtenerInstancia().Insertar(consulta, tabla);
+            return nuevoId;
+        }
+
+        public bool Update(LlamadaEntity llamada)
+        {
+            int encuesta = 0;
+            if (llamada.EncuestaEnviada)
+                encuesta = 1;
+            StringBuilder commandText = new StringBuilder();
+            commandText.AppendFormat("Update llamada ");
+            commandText.AppendFormat(" Set descripcionOperador = {0}, ", llamada.DescripcionOperador);
+            commandText.AppendFormat("      detalleAccionRequerida = {0}, ", llamada.DetalleAccionRequerida);
+            commandText.AppendFormat("      duracion = {0}, ", llamada.Duracion);
+            commandText.AppendFormat("      encuestaEnviada = {0}, ", encuesta);
+            commandText.AppendFormat("      idCliente = {0}, ", llamada.Cliente.Id);
+            commandText.AppendFormat("      idSubOpcionLlamada = {0}, ", llamada.SubOpcionSeleccionada.Id);
+            commandText.AppendFormat("      idOpcionLlamada = {0}, ",llamada.OpcionSeleccionada.Id);
+            commandText.AppendFormat("      Estado = {0} ", llamada.EstadoActual.Id);
+            commandText.AppendFormat(" where idLlamada = {0} ");
+
+            int filas = BDHelper.ObtenerInstancia().Actualizar(commandText.ToString());
+
+            CambioEstadoDao cedao = new CambioEstadoDao();
+            foreach (CambioEstadoEntity cambio in llamada.CambiosEstado)
+            {
+                cedao.Insertar(cambio);
+            }
+
+            return filas < 0;
         }
 
     }

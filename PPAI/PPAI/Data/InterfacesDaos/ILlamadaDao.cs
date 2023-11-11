@@ -10,5 +10,7 @@ namespace PPAI.Data.InterfacesDaos
     interface ILlamadaDao
     {
         LlamadaEntity GetLlamadaById(int id);
+        int NuevaLlamada();
+        bool Update(LlamadaEntity llamada);
     }
 }

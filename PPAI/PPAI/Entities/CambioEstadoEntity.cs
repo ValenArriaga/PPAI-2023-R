@@ -6,15 +6,22 @@ using System.Threading.Tasks;
 
 namespace PPAI.Entities
 {
-    public class CambioEstadoEntity
+    public class CambioEstadoEntity : Entity
     {
+        public CambioEstadoEntity() { }
+        public CambioEstadoEntity(DateTime fecha, EstadoA estado)
+        {
+            FechaHoraInicio = fecha;
+            EstadoAP = estado;
+        }
+
         private DateTime fechaHoraInicio;
         private EstadoEntity estado = new EstadoEntity();
-        private int id;
+        private EstadoA estadoA;
 
         public DateTime FechaHoraInicio { get => fechaHoraInicio; set => fechaHoraInicio = value; }
         public EstadoEntity Estado { get => estado; set => estado = value; }
-        public int Id { get => id; set => id = value; }
+        public EstadoA EstadoAP { get => estadoA; set => estadoA = value; }
 
         public override string ToString()
         {

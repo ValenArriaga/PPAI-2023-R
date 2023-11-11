@@ -1,5 +1,6 @@
 ﻿using PPAI.Data.InterfacesDaos;
 using PPAI.Entities;
+using PPAI.Entities.Estado;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -31,10 +32,25 @@ namespace PPAI.Data.Daos
                     oCambio.Estado = edao.GetEstadoById((int)fila["idEstado"]);
                     oCambio.FechaHoraInicio = (DateTime)fila["fechaHoraInicio"];
                     oCambio.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
+
+                    if (oCambio.Estado.Id == 1)
+                        oCambio.EstadoAP = new Iniciada { Nombre = "Iniciada" };
+                    else if (oCambio.Estado.Id == 2)
+                        oCambio.EstadoAP = new EnCurso { Nombre = "EnCurso" };
+                    else if (oCambio.Estado.Id == 3)
+                        oCambio.EstadoAP = new Iniciada { Nombre = "Iniciada" };
+                    else if (oCambio.Estado.Id == 4)
+                        oCambio.EstadoAP = new Cancelada { Nombre = "Cancelada" };
+
                     lista.Add(oCambio);
                 }
             }
             return lista;
+        }
+
+        public int Insertar(CambioEstadoEntity cambio)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PPAI.Entities
 {
-    public class LlamadaEntity
+    public class LlamadaEntity : Entity
     {
         private string descripcionOperador;
         private string detalleAccionRequerida;
@@ -20,7 +20,6 @@ namespace PPAI.Entities
         private ClienteEntity cliente = new ClienteEntity();
         private string accion;
         private List<CambioEstadoEntity> cambiosEstado = new List<CambioEstadoEntity>();
-        private int id;
 
 
         public string DescripcionOperador { get => descripcionOperador; set => descripcionOperador = value; }
@@ -35,7 +34,7 @@ namespace PPAI.Entities
         public ClienteEntity Cliente { get => cliente; set => cliente = value; }
         public string Accion { get => accion; set => accion = value; }
         public List<CambioEstadoEntity> CambiosEstado { get => cambiosEstado; set => cambiosEstado = value; }
-        public int Id { get => id; set => id = value; }
+        public EstadoA EstadoActual { get; set; }
 
         public override string ToString()
         {
@@ -67,6 +66,21 @@ namespace PPAI.Entities
             {
                 Duracion = horaFin - horaInicio;
             }
+        }
+
+        public void Finalizada(DateTime now)
+        {
+            EstadoActual.Finalizada(now, this);
+        }
+
+        public void TomadaPorOperador(DateTime now)
+        {
+            EstadoActual.TomadaPorOperador(now, this);
+        }
+
+        public void Cancelada(DateTime now)
+        {
+            EstadoActual.Cancelada(now, this);
         }
     }
 }

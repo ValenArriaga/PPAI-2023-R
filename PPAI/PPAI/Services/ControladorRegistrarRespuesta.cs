@@ -1,4 +1,6 @@
-﻿using PPAI.Entities;
+﻿using PPAI.Data.Daos;
+using PPAI.Data.InterfacesDaos;
+using PPAI.Entities;
 using PPAI.Services.Implementaciones;
 using PPAI.Services.Interfaces;
 using PPAI.UI;
@@ -20,10 +22,9 @@ namespace PPAI.Services
         List<ValidacionEntity> validaciones = new List<ValidacionEntity>();
         PantallaRegistrarRespuesta _pantalla;
         
-        //Servicios
-        IEstadoService estadoS = new EstadoService();
-        ILlamadaService llamadaS = new LlamadaService();
-        ICategoriaLlamadaService categoriaS = new CategoriaLlamadaService();
+        //Servicios de Datos
+        ILlamadaDao llamadaD = new LlamadaDao();
+        ICategoriaLlamadaDao categoriaD = new CategoriaLlamadaDao();
 
         internal void BuscarDatosLlamada()
         {
@@ -39,18 +40,14 @@ namespace PPAI.Services
 
         public void NuevaRtaOperador(int idLlamada, int idCategoria, PantallaRegistrarRespuesta pantalla)
         {
-            llamadaActual = llamadaS.GetLlamadaById(idLlamada);
-            categoriaSeleccionada = categoriaS.GetCategoriaLlamadaById(idCategoria);
+            llamadaActual = llamadaD.GetLlamadaById(idLlamada);
+            categoriaSeleccionada = categoriaD.GetCategoriaLlamadaByid(idCategoria);
             _pantalla = pantalla;
-            EstadoEntity enCurso = null;
-            foreach (EstadoEntity estadoE in estadoS.GetAll())
-            {
-                if (estadoE.EsEnCurso())
-                    enCurso = estadoE;
-            }
-            if (enCurso != null)
-                llamadaActual.SetEstadoActual(enCurso, DateTime.Now);
             
+            OpcionLlamadaEntity opcionTomada = new OpcionLlamadaEntity { Nombre = "ComunicarseConOperador" };
+            llamadaActual.OpcionSeleccionada = opcionTomada;
+            llamadaActual.TomadaPorOperador(DateTime.Now);
+            llamadaD.
         }
 
         public void BuscarInfoLlamada()
@@ -67,31 +64,18 @@ namespace PPAI.Services
         {
             llamadaActual.DescripcionOperador = rtaOperador;
             LlamarCU28(accion);
-            EstadoEntity finalizada = null;
-            foreach (EstadoEntity estadoE in estadoS.GetAll())
-            {
-                if (estadoE.EsFinalizada())
-                    finalizada = estadoE;
-            }
-            DateTime now = DateTime.Now;
-            llamadaActual.CalcularDuracion(now);
-            if (finalizada != null)
-                llamadaActual.SetEstadoActual(finalizada, now);
+            
+            OpcionLlamadaEntity opcionFinalizada = new OpcionLlamadaEntity { Nombre = "Finalizar" };
+            llamadaActual.OpcionSeleccionada = opcionFinalizada;
+            llamadaActual.Finalizada(DateTime.Now);
             FinCU();
         }
 
         public void CancelarLlamada()
         {
-            EstadoEntity cancelada = null;
-            foreach (EstadoEntity estadoE in estadoS.GetAll())
-            {
-                if (estadoE.EsCancelada())
-                    cancelada = estadoE;
-            }
-            DateTime now = DateTime.Now;
-            llamadaActual.CalcularDuracion(now);
-            if (cancelada != null)
-                llamadaActual.SetEstadoActual(cancelada, now);
+            OpcionLlamadaEntity opcionCancelada = new OpcionLlamadaEntity { Nombre = "Cancelar" };
+            llamadaActual.OpcionSeleccionada = opcionCancelada;
+            llamadaActual.Finalizada(DateTime.Now);
         }
 
         public void FinCU()
