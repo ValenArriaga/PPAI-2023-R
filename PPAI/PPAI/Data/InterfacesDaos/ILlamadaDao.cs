@@ -11,6 +11,6 @@ namespace PPAI.Data.InterfacesDaos
     {
         LlamadaEntity GetLlamadaById(int id);
         int NuevaLlamada();
-        bool Update(LlamadaEntity llamada);
+        bool Update(LlamadaEntity llamada, bool cambioEstado = true);
     }
 }

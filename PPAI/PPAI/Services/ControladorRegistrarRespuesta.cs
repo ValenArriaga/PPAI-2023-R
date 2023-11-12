@@ -86,7 +86,7 @@ namespace PPAI.Services
         public void LlamarCU28(string accion)
         {
             llamadaActual.Accion = accion;
-            llamadaD.Update(llamadaActual);
+            llamadaD.Update(llamadaActual, false);
             MessageBox.Show("Accion registrada con exito");
         }
 

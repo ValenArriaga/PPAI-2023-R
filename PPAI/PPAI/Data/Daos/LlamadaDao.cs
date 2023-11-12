@@ -56,7 +56,7 @@ namespace PPAI.Data.Daos
             return nuevoId;
         }
 
-        public bool Update(LlamadaEntity llamada)
+        public bool Update(LlamadaEntity llamada, bool cambioEstado = true)
         {
             int encuesta = 0;
             if (llamada.EncuestaEnviada)
@@ -73,9 +73,12 @@ namespace PPAI.Data.Daos
             commandText.AppendFormat("      Estado = {0} ", llamada.EstadoActual.Id);
             commandText.AppendFormat(" where idLlamada = {0} ", llamada.Id);
 
-            CambioEstadoDao cedao = new CambioEstadoDao();
-            CambioEstadoEntity cambio = llamada.CambiosEstado[llamada.CambiosEstado.Count - 1];
-            cambio.Id = cedao.Insertar(cambio, llamada.Id);
+            if (cambioEstado)
+            {
+                CambioEstadoDao cedao = new CambioEstadoDao();
+                CambioEstadoEntity cambio = llamada.CambiosEstado[llamada.CambiosEstado.Count - 1];
+                cambio.Id = cedao.Insertar(cambio, llamada.Id);
+            }
 
             int filas = BDHelper.ObtenerInstancia().Actualizar(commandText.ToString());            
 
