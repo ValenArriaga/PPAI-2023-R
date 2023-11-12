@@ -41,31 +41,9 @@ namespace PPAI.Entities
             return base.ToString();
         }
 
-        public void SetEstadoActual(EstadoEntity e, DateTime fecha)
-        {
-            CambioEstadoEntity nuevoCambioEstado = new CambioEstadoEntity();
-            nuevoCambioEstado.Estado = e;
-            nuevoCambioEstado.FechaHoraInicio = fecha;
-            CambiosEstado.Add(nuevoCambioEstado);
-        }
-
         public bool ValidarInfoCliente(string respuesta, ValidacionEntity validacion)
         {
             return Cliente.EsInfoCorrecta(respuesta, validacion);
-        }
-
-        public void CalcularDuracion(DateTime horaFin)
-        {
-            DateTime horaInicio = DateTime.Now;
-            foreach (CambioEstadoEntity cambioEstado in CambiosEstado)
-            {
-                if (cambioEstado.Estado.EsEnCurso())
-                    horaInicio = cambioEstado.FechaHoraInicio;
-            }
-            if (horaInicio != null)
-            {
-                Duracion = horaFin - horaInicio;
-            }
         }
 
         public void Finalizada(DateTime now)

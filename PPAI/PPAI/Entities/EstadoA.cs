@@ -12,26 +12,17 @@ namespace PPAI.Entities
 
         public virtual void TomadaPorOperador(DateTime date, LlamadaEntity llamada)
         {
-            EstadoA nuevoEstado = CrearProximoEstado(llamada);
-            CambioEstadoEntity nuevoCambio = CrearCambioEstado(date, nuevoEstado);
-            llamada.CambiosEstado.Add(nuevoCambio);
-            llamada.EstadoActual = nuevoEstado;
+            throw new NotImplementedException();
         }
 
         public virtual void Cancelada(DateTime fecha, LlamadaEntity llamada)
         {
-            EstadoA nuevoEstado = CrearProximoEstado(llamada);
-            CambioEstadoEntity nuevoCambio = CrearCambioEstado(fecha, nuevoEstado);
-            llamada.CambiosEstado.Add(nuevoCambio);
-            llamada.EstadoActual = nuevoEstado;
+            throw new NotImplementedException();
         }
 
         public virtual void Finalizada(DateTime fecha, LlamadaEntity llamada)
         {
-            EstadoA nuevoEstado = CrearProximoEstado(llamada);
-            CambioEstadoEntity nuevoCambio = CrearCambioEstado(fecha, nuevoEstado);
-            llamada.CambiosEstado.Add(nuevoCambio);
-            llamada.EstadoActual = nuevoEstado;
+            throw new NotImplementedException();
         }
 
         public abstract EstadoA CrearProximoEstado(LlamadaEntity llamada);
@@ -39,6 +30,31 @@ namespace PPAI.Entities
         public virtual CambioEstadoEntity CrearCambioEstado(DateTime fecha, EstadoA estado)
         {
             return new CambioEstadoEntity(fecha, estado);
+        }
+
+        public virtual TimeSpan CalcularDuracion(LlamadaEntity llamada)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual bool EsIniciada()
+        {
+            return false;
+        }
+
+        public virtual bool EsEnCurso()
+        {
+            return false;
+        }
+
+        public virtual bool EsFinalizada()
+        {
+            return false;
+        }
+
+        public virtual bool EsCancelada()
+        {
+            return false;
         }
     }
 }

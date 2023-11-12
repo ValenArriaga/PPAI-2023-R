@@ -1,8 +1,6 @@
 ﻿using PPAI.Data.Daos;
 using PPAI.Data.InterfacesDaos;
 using PPAI.Entities;
-using PPAI.Services.Implementaciones;
-using PPAI.Services.Interfaces;
 using PPAI.UI;
 using System;
 using System.Collections.Generic;
@@ -44,10 +42,10 @@ namespace PPAI.Services
             categoriaSeleccionada = categoriaD.GetCategoriaLlamadaByid(idCategoria);
             _pantalla = pantalla;
             
-            OpcionLlamadaEntity opcionTomada = new OpcionLlamadaEntity { Nombre = "ComunicarseConOperador" };
+            OpcionLlamadaEntity opcionTomada = new OpcionLlamadaEntity { Id = 5 , Nombre = "ComunicarseConOperador" };
             llamadaActual.OpcionSeleccionada = opcionTomada;
             llamadaActual.TomadaPorOperador(DateTime.Now);
-            llamadaD.
+            llamadaD.Update(llamadaActual);
         }
 
         public void BuscarInfoLlamada()
@@ -65,17 +63,19 @@ namespace PPAI.Services
             llamadaActual.DescripcionOperador = rtaOperador;
             LlamarCU28(accion);
             
-            OpcionLlamadaEntity opcionFinalizada = new OpcionLlamadaEntity { Nombre = "Finalizar" };
+            OpcionLlamadaEntity opcionFinalizada = new OpcionLlamadaEntity { Id = 6 , Nombre = "Finalizar" };
             llamadaActual.OpcionSeleccionada = opcionFinalizada;
             llamadaActual.Finalizada(DateTime.Now);
+            llamadaD.Update(llamadaActual);
             FinCU();
         }
 
         public void CancelarLlamada()
         {
-            OpcionLlamadaEntity opcionCancelada = new OpcionLlamadaEntity { Nombre = "Cancelar" };
+            OpcionLlamadaEntity opcionCancelada = new OpcionLlamadaEntity { Id = 7 ,  Nombre = "Cancelar" };
             llamadaActual.OpcionSeleccionada = opcionCancelada;
-            llamadaActual.Finalizada(DateTime.Now);
+            llamadaActual.Cancelada(DateTime.Now);
+            llamadaD.Update(llamadaActual);
         }
 
         public void FinCU()
@@ -86,6 +86,7 @@ namespace PPAI.Services
         public void LlamarCU28(string accion)
         {
             llamadaActual.Accion = accion;
+            llamadaD.Update(llamadaActual);
             MessageBox.Show("Accion registrada con exito");
         }
 

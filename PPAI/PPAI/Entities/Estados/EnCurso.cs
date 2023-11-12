@@ -12,6 +12,48 @@ namespace PPAI.Entities.Estado
         {
             Id = 2;
         }
+
+        public override void Cancelada(DateTime fecha, LlamadaEntity llamada)
+        {
+            EstadoA nuevoEstado = CrearProximoEstado(llamada);
+            CambioEstadoEntity nuevoCambio = CrearCambioEstado(fecha, nuevoEstado);
+            llamada.CambiosEstado.Add(nuevoCambio);
+            llamada.EstadoActual = nuevoEstado;
+            llamada.Duracion = CalcularDuracion(llamada);
+        }
+
+        public override void Finalizada(DateTime fecha, LlamadaEntity llamada)
+        {
+            EstadoA nuevoEstado = CrearProximoEstado(llamada);
+            CambioEstadoEntity nuevoCambio = CrearCambioEstado(fecha, nuevoEstado);
+            llamada.CambiosEstado.Add(nuevoCambio);
+            llamada.EstadoActual = nuevoEstado;
+            llamada.Duracion = CalcularDuracion(llamada);
+        }
+
+        public override bool EsEnCurso()
+        {
+            return true;
+        }
+        public override TimeSpan CalcularDuracion(LlamadaEntity llamada)
+        {
+            DateTime horaInicio = DateTime.Now;
+            DateTime horaFin = DateTime.Now;
+            TimeSpan duracion;
+
+            foreach (CambioEstadoEntity cambioEstado in llamada.CambiosEstado)
+            {
+                if (cambioEstado.EstadoAP.EsIniciada())
+                    horaInicio = cambioEstado.FechaHoraInicio;
+                if (cambioEstado.EstadoAP.Equals(llamada.EstadoActual))
+                    horaFin = cambioEstado.FechaHoraInicio;
+            }
+
+            duracion = horaFin - horaInicio;
+
+            return duracion;
+        }
+
         public override EstadoA CrearProximoEstado(LlamadaEntity llamada)
         {
             if (llamada.OpcionSeleccionada.Nombre == "Cancelar")

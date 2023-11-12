@@ -108,7 +108,7 @@ namespace PPAI.UI
             this.dgvValidaciones.Location = new System.Drawing.Point(17, 148);
             this.dgvValidaciones.Name = "dgvValidaciones";
             this.dgvValidaciones.Size = new System.Drawing.Size(645, 169);
-            this.dgvValidaciones.TabIndex = 5;
+            this.dgvValidaciones.TabIndex = 16;
             // 
             // Validaciones
             // 
@@ -130,7 +130,7 @@ namespace PPAI.UI
             this.txtRespuestaOperador.Multiline = true;
             this.txtRespuestaOperador.Name = "txtRespuestaOperador";
             this.txtRespuestaOperador.Size = new System.Drawing.Size(645, 83);
-            this.txtRespuestaOperador.TabIndex = 7;
+            this.txtRespuestaOperador.TabIndex = 18;
             // 
             // lblDescripcionOperador
             // 
@@ -156,14 +156,14 @@ namespace PPAI.UI
             this.cboAcciones.Location = new System.Drawing.Point(69, 483);
             this.cboAcciones.Name = "cboAcciones";
             this.cboAcciones.Size = new System.Drawing.Size(178, 21);
-            this.cboAcciones.TabIndex = 10;
+            this.cboAcciones.TabIndex = 19;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(553, 512);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 23);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -173,7 +173,7 @@ namespace PPAI.UI
             this.btnOk.Location = new System.Drawing.Point(396, 512);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(109, 23);
-            this.btnOk.TabIndex = 12;
+            this.btnOk.TabIndex = 20;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);

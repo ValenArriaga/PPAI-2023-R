@@ -23,7 +23,10 @@ namespace TPPav1.Datos
             comando = new SqlCommand();
 
             //Valentin
-            cadenaConexion = @"Data Source=DESKTOP-84H3S6N\SQLEXPRESS;Initial Catalog=PPAI;Integrated Security=True";        
+            //cadenaConexion = @"Data Source=DESKTOP-84H3S6N\SQLEXPRESS;Initial Catalog=PPAI;Integrated Security=True";
+
+            //valentin 2
+            cadenaConexion = @"Data Source=VARRIAGA\VARRIAGA;Initial Catalog=PPAI;Integrated Security=True";
         }
 
         enum ResultadoTransaccion

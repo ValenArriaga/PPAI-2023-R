@@ -17,5 +17,10 @@ namespace PPAI.Entities.Estado
         {
             throw new NotImplementedException();
         }
+
+        public override bool EsFinalizada()
+        {
+            return true;
+        }
     }
 }

@@ -48,9 +48,18 @@ namespace PPAI.Data.Daos
             return lista;
         }
 
-        public int Insertar(CambioEstadoEntity cambio)
+        public int Insertar(CambioEstadoEntity cambio, int idLlamada)
         {
-            throw new NotImplementedException();
+            return Insertar(cambio.FechaHoraInicio, cambio.EstadoAP.Id, idLlamada);
+        }
+
+        public int Insertar(DateTime now, int idEstado, int idLlamada)
+        {
+            StringBuilder commandText = new StringBuilder();
+            commandText.AppendFormat("INSERT INTO CambioEstado(fechaHoraInicio, idLlamada, idEstado) ");
+            commandText.AppendFormat(" values ('{0}', {1}, {2}) ", now.ToString(), idLlamada, idEstado);
+
+            return BDHelper.ObtenerInstancia().Insertar(commandText.ToString(), "CambioEstado");
         }
     }
 }

@@ -16,5 +16,10 @@ namespace PPAI.Entities.Estado
         {
             throw new NotImplementedException();
         }
+
+        public override bool EsCancelada()
+        {
+            return true;
+        }
     }
 }
