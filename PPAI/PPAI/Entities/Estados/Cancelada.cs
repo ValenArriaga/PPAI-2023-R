@@ -11,6 +11,7 @@ namespace PPAI.Entities.Estado
         public Cancelada()
         {
             Id = 4;
+            Nombre = "Cancelada";
         }
         public override EstadoA CrearProximoEstado(LlamadaEntity llamada)
         {

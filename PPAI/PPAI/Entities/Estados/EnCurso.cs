@@ -11,6 +11,7 @@ namespace PPAI.Entities.Estado
         public EnCurso()
         {
             Id = 2;
+            Nombre = "En Curso";
         }
 
         public override void Cancelada(DateTime fecha, LlamadaEntity llamada)
@@ -56,9 +57,9 @@ namespace PPAI.Entities.Estado
 
         public override EstadoA CrearProximoEstado(LlamadaEntity llamada)
         {
-            if (llamada.OpcionSeleccionada.Nombre == "Cancelar")
+            if (llamada.OpcionSeleccionada.Nombre == "Cancelada")
                 return new Cancelada();
-            else if (llamada.OpcionSeleccionada.Nombre == "Finalizar")
+            else if (llamada.OpcionSeleccionada.Nombre == "Finalizada")
                 return new Finalizada();
             else return null;
         }

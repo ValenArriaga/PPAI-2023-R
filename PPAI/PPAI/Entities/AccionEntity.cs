@@ -11,7 +11,6 @@ namespace PPAI.Entities
         private string descripcion;
 
         public string Descripcion { get => descripcion; set => descripcion = value; }
-        public int Id { get => id; set => id = value; }
 
     }
 }

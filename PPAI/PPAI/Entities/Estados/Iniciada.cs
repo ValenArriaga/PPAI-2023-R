@@ -65,11 +65,11 @@ namespace PPAI.Entities.Estado
 
         public override EstadoA CrearProximoEstado(LlamadaEntity llamada)
         {
-            if (llamada.OpcionSeleccionada.Nombre == "ComunicarseConOperador")
+            if (llamada.OpcionSeleccionada.Nombre == "Comunicarse con Operador")
                 return new EnCurso();
-            else if (llamada.OpcionSeleccionada.Nombre == "Cancelar")
+            else if (llamada.OpcionSeleccionada.Nombre == "Cancelada")
                 return new Cancelada();
-            else if (llamada.OpcionSeleccionada.Nombre == "Finalizar")
+            else if (llamada.OpcionSeleccionada.Nombre == "Finalizada")
                 return new Finalizada();
             else return null;
         }

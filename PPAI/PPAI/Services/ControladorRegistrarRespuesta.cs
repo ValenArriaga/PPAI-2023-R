@@ -23,6 +23,7 @@ namespace PPAI.Services
         //Servicios de Datos
         ILlamadaDao llamadaD = new LlamadaDao();
         ICategoriaLlamadaDao categoriaD = new CategoriaLlamadaDao();
+        IOpcionLlamadaDao opcionD = new OpcionLlamadaDao();
 
         internal void BuscarDatosLlamada()
         {
@@ -42,7 +43,7 @@ namespace PPAI.Services
             categoriaSeleccionada = categoriaD.GetCategoriaLlamadaByid(idCategoria);
             _pantalla = pantalla;
             
-            OpcionLlamadaEntity opcionTomada = new OpcionLlamadaEntity { Id = 5 , Nombre = "ComunicarseConOperador" };
+            OpcionLlamadaEntity opcionTomada = opcionD.GetOpcionLlamadaById(5);
             llamadaActual.OpcionSeleccionada = opcionTomada;
             llamadaActual.TomadaPorOperador(DateTime.Now);
             llamadaD.Update(llamadaActual);
@@ -63,7 +64,7 @@ namespace PPAI.Services
             llamadaActual.DescripcionOperador = rtaOperador;
             LlamarCU28(accion);
             
-            OpcionLlamadaEntity opcionFinalizada = new OpcionLlamadaEntity { Id = 6 , Nombre = "Finalizar" };
+            OpcionLlamadaEntity opcionFinalizada = opcionD.GetOpcionLlamadaById(6);
             llamadaActual.OpcionSeleccionada = opcionFinalizada;
             llamadaActual.Finalizada(DateTime.Now);
             llamadaD.Update(llamadaActual);
@@ -72,7 +73,7 @@ namespace PPAI.Services
 
         public void CancelarLlamada()
         {
-            OpcionLlamadaEntity opcionCancelada = new OpcionLlamadaEntity { Id = 7 ,  Nombre = "Cancelar" };
+            OpcionLlamadaEntity opcionCancelada = opcionD.GetOpcionLlamadaById(7);
             llamadaActual.OpcionSeleccionada = opcionCancelada;
             llamadaActual.Cancelada(DateTime.Now);
             llamadaD.Update(llamadaActual);

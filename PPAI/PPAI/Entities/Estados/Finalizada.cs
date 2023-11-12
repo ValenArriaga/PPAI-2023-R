@@ -11,6 +11,7 @@ namespace PPAI.Entities.Estado
         public Finalizada()
         {
             Id = 3;
+            Nombre = "Finalizada";
         }
 
         public override EstadoA CrearProximoEstado(LlamadaEntity llamada)

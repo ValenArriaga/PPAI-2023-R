@@ -47,7 +47,7 @@ namespace PPAI.Data.Daos
             int nuevoId;
             string tabla = "Llamada";
             string consulta = "insert into Llamada(idCliente, idSubOpcionLlamada, idOpcionLlamada, idUsuario, Estado)" +
-                "values(1, 1, 1, 1, 1)";
+                "values(1, 2, 1, 1, 1)";
             nuevoId = BDHelper.ObtenerInstancia().Insertar(consulta, tabla);
             
             CambioEstadoDao cedao = new CambioEstadoDao();

@@ -23,23 +23,22 @@ namespace PPAI.Data.Daos
             List<CambioEstadoEntity> lista = new List<CambioEstadoEntity>();
             string consulta = "SELECT * FROM CambioEstado WHERE idLlamada = " + id;
             DataTable tabla = BDHelper.ObtenerInstancia().Consultar(consulta);
-            EstadoDao edao = new EstadoDao();
             if (tabla.Rows.Count > 0)
             {
                 foreach (DataRow fila in tabla.Rows)
                 {
                     CambioEstadoEntity oCambio = new CambioEstadoEntity();
-                    oCambio.Estado = edao.GetEstadoById((int)fila["idEstado"]);
+                    int idEstado = (int)fila["idEstado"];
                     oCambio.FechaHoraInicio = (DateTime)fila["fechaHoraInicio"];
                     oCambio.Id = Int32.Parse(tabla.Rows[0]["id"].ToString());
 
-                    if (oCambio.Estado.Id == 1)
+                    if (idEstado == 1)
                         oCambio.EstadoAP = new Iniciada { Nombre = "Iniciada" };
-                    else if (oCambio.Estado.Id == 2)
+                    else if (idEstado == 2)
                         oCambio.EstadoAP = new EnCurso { Nombre = "EnCurso" };
-                    else if (oCambio.Estado.Id == 3)
+                    else if (idEstado == 3)
                         oCambio.EstadoAP = new Iniciada { Nombre = "Iniciada" };
-                    else if (oCambio.Estado.Id == 4)
+                    else if (idEstado == 4)
                         oCambio.EstadoAP = new Cancelada { Nombre = "Cancelada" };
 
                     lista.Add(oCambio);

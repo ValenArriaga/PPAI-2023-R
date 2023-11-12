@@ -53,6 +53,7 @@ namespace PPAI.UI
             // 
             // lblTitulo
             // 
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(12, 9);
@@ -63,6 +64,7 @@ namespace PPAI.UI
             // 
             // lblCliente
             // 
+            this.lblCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCliente.AutoSize = true;
             this.lblCliente.Location = new System.Drawing.Point(17, 65);
             this.lblCliente.Name = "lblCliente";
@@ -72,6 +74,7 @@ namespace PPAI.UI
             // 
             // lblCategoria
             // 
+            this.lblCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Location = new System.Drawing.Point(279, 65);
             this.lblCategoria.Name = "lblCategoria";
@@ -81,6 +84,7 @@ namespace PPAI.UI
             // 
             // lblOpcion
             // 
+            this.lblOpcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblOpcion.AutoSize = true;
             this.lblOpcion.Location = new System.Drawing.Point(15, 108);
             this.lblOpcion.Name = "lblOpcion";
@@ -90,6 +94,7 @@ namespace PPAI.UI
             // 
             // lblSubopcion
             // 
+            this.lblSubopcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSubopcion.AutoSize = true;
             this.lblSubopcion.Location = new System.Drawing.Point(271, 108);
             this.lblSubopcion.Name = "lblSubopcion";
@@ -101,6 +106,7 @@ namespace PPAI.UI
             // 
             this.dgvValidaciones.AllowUserToAddRows = false;
             this.dgvValidaciones.AllowUserToDeleteRows = false;
+            this.dgvValidaciones.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvValidaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvValidaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Validaciones,
@@ -125,6 +131,7 @@ namespace PPAI.UI
             // 
             // txtRespuestaOperador
             // 
+            this.txtRespuestaOperador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRespuestaOperador.Enabled = false;
             this.txtRespuestaOperador.Location = new System.Drawing.Point(17, 374);
             this.txtRespuestaOperador.Multiline = true;
@@ -134,6 +141,7 @@ namespace PPAI.UI
             // 
             // lblDescripcionOperador
             // 
+            this.lblDescripcionOperador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDescripcionOperador.AutoSize = true;
             this.lblDescripcionOperador.Location = new System.Drawing.Point(14, 358);
             this.lblDescripcionOperador.Name = "lblDescripcionOperador";
@@ -143,6 +151,7 @@ namespace PPAI.UI
             // 
             // lblAccion
             // 
+            this.lblAccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAccion.AutoSize = true;
             this.lblAccion.Location = new System.Drawing.Point(15, 486);
             this.lblAccion.Name = "lblAccion";
@@ -152,6 +161,7 @@ namespace PPAI.UI
             // 
             // cboAcciones
             // 
+            this.cboAcciones.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboAcciones.FormattingEnabled = true;
             this.cboAcciones.Location = new System.Drawing.Point(69, 483);
             this.cboAcciones.Name = "cboAcciones";
@@ -160,6 +170,7 @@ namespace PPAI.UI
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancelar.Location = new System.Drawing.Point(553, 512);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 23);
@@ -170,6 +181,7 @@ namespace PPAI.UI
             // 
             // btnOk
             // 
+            this.btnOk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOk.Location = new System.Drawing.Point(396, 512);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(109, 23);
@@ -180,6 +192,7 @@ namespace PPAI.UI
             // 
             // txtCliente
             // 
+            this.txtCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCliente.Enabled = false;
             this.txtCliente.Location = new System.Drawing.Point(58, 62);
             this.txtCliente.Name = "txtCliente";
@@ -188,6 +201,7 @@ namespace PPAI.UI
             // 
             // txtCategoria
             // 
+            this.txtCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCategoria.Enabled = false;
             this.txtCategoria.Location = new System.Drawing.Point(337, 62);
             this.txtCategoria.Name = "txtCategoria";
@@ -196,6 +210,7 @@ namespace PPAI.UI
             // 
             // txtOpcion
             // 
+            this.txtOpcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtOpcion.Enabled = false;
             this.txtOpcion.Location = new System.Drawing.Point(58, 105);
             this.txtOpcion.Name = "txtOpcion";
@@ -204,6 +219,7 @@ namespace PPAI.UI
             // 
             // txtSubOpcion
             // 
+            this.txtSubOpcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSubOpcion.Enabled = false;
             this.txtSubOpcion.Location = new System.Drawing.Point(337, 105);
             this.txtSubOpcion.Name = "txtSubOpcion";
@@ -212,6 +228,7 @@ namespace PPAI.UI
             // 
             // btnConfirmar
             // 
+            this.btnConfirmar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConfirmar.Location = new System.Drawing.Point(396, 323);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(266, 23);
@@ -242,8 +259,10 @@ namespace PPAI.UI
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.lblTitulo);
+            this.MinimizeBox = false;
             this.Name = "PantallaRegistrarRespuesta";
             this.Text = "PantallaRegistrarRespuesta";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PantallaRegistrarRespuesta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvValidaciones)).EndInit();
             this.ResumeLayout(false);
