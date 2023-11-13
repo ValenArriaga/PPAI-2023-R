@@ -77,9 +77,13 @@
     <Compile Include="Entities\EstadoA.cs" />
     <Compile Include="Entities\EstadoEntity.cs" />
     <Compile Include="Entities\Estados\Cancelada.cs" />
+    <Compile Include="Entities\Estados\Descartada.cs" />
     <Compile Include="Entities\Estados\EnCurso.cs" />
+    <Compile Include="Entities\Estados\EscuchaConObservacion.cs" />
+    <Compile Include="Entities\Estados\EscuchaCorrecta.cs" />
     <Compile Include="Entities\Estados\Finalizada.cs" />
     <Compile Include="Entities\Estados\Iniciada.cs" />
+    <Compile Include="Entities\Estados\PendienteDeEscucha.cs" />
     <Compile Include="Entities\InformacionClienteEntity.cs" />
     <Compile Include="Entities\LlamadaEntity.cs" />
     <Compile Include="Entities\OpcionLlamadaEntity.cs" />
