@@ -21,10 +21,12 @@ namespace PPAI.Data.Daos
             OpcionLlamadaDao oldao = new OpcionLlamadaDao();
             SubOpcionLlamadaDao soldao = new SubOpcionLlamadaDao();
             CambioEstadoDao cedao = new CambioEstadoDao();
+            AccionDao adao = new AccionDao();
             if (tabla.Rows.Count > 0)
             {
                 oLlamada.DescripcionOperador = tabla.Rows[0]["descripcionOperador"].ToString();
-                oLlamada.Accion = tabla.Rows[0]["detalleAccionRequerida"].ToString();
+                if (tabla.Rows[0]["idAccion"] != DBNull.Value)
+                    oLlamada.Accion = adao.GetAccionById((int)tabla.Rows[0]["idAccion"]);
                 string encuesta = tabla.Rows[0]["encuestaEnviada"].ToString();
                 if (encuesta == "1")
                     oLlamada.EncuestaEnviada = true;
@@ -71,6 +73,8 @@ namespace PPAI.Data.Daos
             commandText.AppendFormat("      idSubOpcionLlamada = {0}, ", llamada.SubOpcionSeleccionada.Id);
             commandText.AppendFormat("      idOpcionLlamada = {0}, ",llamada.OpcionSeleccionada.Id);
             commandText.AppendFormat("      Estado = {0} ", llamada.EstadoActual.Id);
+            if (llamada.Accion != null)
+                commandText.AppendFormat(" ,idAccion = {0} ", llamada.Accion.Id);
             commandText.AppendFormat(" where idLlamada = {0} ", llamada.Id);
 
             if (cambioEstado)

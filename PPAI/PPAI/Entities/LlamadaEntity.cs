@@ -18,7 +18,7 @@ namespace PPAI.Entities
         private string auditor;
         private string operador;
         private ClienteEntity cliente = new ClienteEntity();
-        private string accion;
+        private AccionEntity accion;
         private List<CambioEstadoEntity> cambiosEstado = new List<CambioEstadoEntity>();
 
 
@@ -32,7 +32,7 @@ namespace PPAI.Entities
         public string Auditor { get => auditor; set => auditor = value; }
         public string Operador { get => operador; set => operador = value; }
         public ClienteEntity Cliente { get => cliente; set => cliente = value; }
-        public string Accion { get => accion; set => accion = value; }
+        public AccionEntity Accion { get => accion; set => accion = value; }
         public List<CambioEstadoEntity> CambiosEstado { get => cambiosEstado; set => cambiosEstado = value; }
         public EstadoA EstadoActual { get; set; }
 

@@ -24,6 +24,7 @@ namespace PPAI.Services
         ILlamadaDao llamadaD = new LlamadaDao();
         ICategoriaLlamadaDao categoriaD = new CategoriaLlamadaDao();
         IOpcionLlamadaDao opcionD = new OpcionLlamadaDao();
+        IAccionDao accionD = new AccionDao();
 
         internal void BuscarDatosLlamada()
         {
@@ -59,9 +60,10 @@ namespace PPAI.Services
             }
         }
 
-        public void TomarRtaYConfirmacion(string rtaOperador, string accion)
+        public void TomarRtaYConfirmacion(string rtaOperador, int idAccion)
         {
             llamadaActual.DescripcionOperador = rtaOperador;
+            AccionEntity accion = accionD.GetAccionById(idAccion);
             LlamarCU28(accion);
             
             OpcionLlamadaEntity opcionFinalizada = opcionD.GetOpcionLlamadaById(6);
@@ -84,7 +86,7 @@ namespace PPAI.Services
             MessageBox.Show("Respuesta registrada con exito");
         }
 
-        public void LlamarCU28(string accion)
+        public void LlamarCU28(AccionEntity accion)
         {
             llamadaActual.Accion = accion;
             llamadaD.Update(llamadaActual, false);

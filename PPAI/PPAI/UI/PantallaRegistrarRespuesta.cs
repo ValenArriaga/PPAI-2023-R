@@ -98,7 +98,8 @@ namespace PPAI.UI
         {
             if (MessageBox.Show("Desea confirmar la operacion realizada?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                controlador.TomarRtaYConfirmacion(txtRespuestaOperador.Text, cboAcciones.SelectedItem.ToString());
+                int accion = (int)cboAcciones.SelectedValue;
+                controlador.TomarRtaYConfirmacion(txtRespuestaOperador.Text, accion);
                 this.Close();
             }
         }

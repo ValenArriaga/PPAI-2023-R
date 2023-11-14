@@ -10,20 +10,11 @@ namespace PPAI.Entities
     {
         public string Nombre { get; set; }
 
-        public virtual void TomadaPorOperador(DateTime date, LlamadaEntity llamada)
-        {
-            throw new NotImplementedException();
-        }
+        public virtual void TomadaPorOperador(DateTime date, LlamadaEntity llamada) { }
 
-        public virtual void Cancelada(DateTime fecha, LlamadaEntity llamada)
-        {
-            throw new NotImplementedException();
-        }
+        public virtual void Cancelada(DateTime fecha, LlamadaEntity llamada) { }
 
-        public virtual void Finalizada(DateTime fecha, LlamadaEntity llamada)
-        {
-            throw new NotImplementedException();
-        }
+        public virtual void Finalizada(DateTime fecha, LlamadaEntity llamada) { }
 
         public abstract EstadoA CrearProximoEstado(LlamadaEntity llamada);
 
